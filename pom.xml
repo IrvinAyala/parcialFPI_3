@@ -9,7 +9,11 @@
 	<packaging>war</packaging>
 
 	<name>parcialFPI_3</name>
+<<<<<<< HEAD
 	<description>Demo project for Spring Boot</description>
+=======
+	<description>pokedex project</description>
+>>>>>>> 49277c7fd31a76fbe00feb0405d3f837b162dd36
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -32,6 +36,14 @@
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+<<<<<<< HEAD
+=======
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+>>>>>>> 49277c7fd31a76fbe00feb0405d3f837b162dd36
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<scope>provided</scope>
 		</dependency>
