@@ -23,21 +23,21 @@ var iContador = 0;
 function $(query) {
     return document.querySelector(query);
 }
-$(".btn").onclick = function () {
-    idPokemon = $(".form-control").value;
-  
-    cargarDatos();
+$(".btn").onclick = function (e) {
+	captarId(e);
 };
+function captarId(e) {
+	var pokemonSelecionado = $(".form-control").value;
+    var nombresPokemon = document.getElementsByName(pokemonSelecionado);
+    var pokemonABuscar = parseInt(nombresPokemon[0].getAttribute("id"));
+
+    idPokemon = pokemonABuscar;
+    e.preventDefault();
+    cargarDatos();
+}
 
 function limpiar() {
-//	var eliminado1=$(".moves");
-//	var eliminado2=$(".tipo1");
-//	var eliminado3=$(".tipo2");
-//	
-//	if(eliminado1!=null && eliminado2!=null && eliminado3!=null){
-//	eliminado1.innerHTML="";
-//	
-//	}
+
 	$("#divTipos").innerHTML="";
 	$("#divOtrosMovs").innerHTML="";
 	$("#moves").innerHTML="";
@@ -46,12 +46,7 @@ function limpiar() {
 
 function LlenarConEnter(e) {
     if (e.keyCode == 13) {
-        var pokemonSelecionado = $(".form-control").value;
-        var nombresPokemon = document.getElementsByName(pokemonSelecionado);
-        var pokemonABuscar = parseInt(nombresPokemon[0].getAttribute("id"));
-//        cargarDatos(pokeid + 1);
-        idPokemon = pokemonABuscar;
-        cargarDatos();
+       captarId(e);
     }
 }
 function cargarDatos() {
@@ -108,10 +103,10 @@ limpiar();
     $("#titulo").innerHTML =idPokemon+" - "+pokemon.name;
 
     //    Para el peso del pokemon
-    $("#peso span").innerHTML = pokemon.weight;
+    $("#peso span").innerHTML = pokemon.weight/10+"kg";
 
 //    Para la altura del pokemon
-    $("#altura span").innerHTML = pokemon.height;
+    $("#altura span").innerHTML = pokemon.height/10+"m";
 
 //    Para la descripcion del pokemon
     for (var i = 0; i < especie.flavor_text_entries.length; i++) {
