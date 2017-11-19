@@ -1,124 +1,128 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-<meta charset="UTF-8">
-<title>PokeViewer</title>
-<link href="/css/pokedex.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-<link href="https://fonts.googleapis.com/css?family=VT323"
-	rel="stylesheet">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-</head>
-<body>
-	<header>
-
-
-		<nav class="navbar navbar-inverse">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="#">Pokedex</a>
-				</div>
-				<ul class="nav navbar-nav">
-					<li><a href="login.html">Iniciar Sesion</a></li>
-					<li><a href="registro.html">Resgistrarme</a></li>
-				</ul>
-				<form class="navbar-form navbar-left">
-					<div class="form-group">
-						<input type="text" class="form-control"
-							placeholder="Busca un pokemon" list="lista" onkeypress="return LlenarConEnter(event)">
-							<datalist id="lista"></datalist>
-					</div>
-					<button type="button" class="btn btn-default">Buscar</button>
-				</form>
-			</div>
-		</nav>
+    <head>
+        <meta charset="UTF-8">
+        <title>PokeViewer</title>
+        <link href="../css/pokedex.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+            #probando-evoluciones{
+                width: 500px;
+                height: 500px;
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
 
 
-
-	</header>
-	<div id="contenedor">
-		<section id="layoutIzquierdo">
-			<div id="layoutIzquierdoInterno">
-
-				<div id="pokemonImage">
-					<div>
-						<img alt="Foto del pokemon"
-							src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/600.png">
-					</div>
-				</div>
-				<br>
-				<div id="habitat" class="textoGris">Montañes</div>
-			</div>
-			<div id="layoutDerechoInterno">
-				<div id="div-titulo" class="textoGris">
-
-					<div id="pokeballImage">
-						<img src="../images/pokeball2.png" alt="hola">
-					</div>
-
-					<div id="titulo">200-Raichu</div>
-				</div>
-				<br> <br>
-
-				<div id="infoPokemon">
-					<div id="divTipos">
-						
-						
-					</div>
-					<br> <br>
-					<div id="altura">
-						<label>ALTURA</label> <span>0.4 m</span>
-					</div>
-					<div id="peso">
-						<label>PESO</label> <span>6.0 kg</span>
-					</div>
-
-				</div>
-				<br>
-			</div>
-			<div id="descripcion">Es un hecho establecido hace demasiado
-				tiempo que un lector se distraerá con el contenido del texto de un
-				sitio mientras que mira su diseño</div>
-		</section>
-		<section id="layoutDerecho">
-		<div id="opcion1">
-			<p class="topic">Habilidades</p>
-			<div id="moves">
-				
-			</div>
-			<p class="topic">Moves</p>
-			<div id="divOtrosMovs">
-				
-			</div>
-		</div>
-		<div id="opcion2" class="ocultar">
-		<p class="topic">Evoluciones<p>
-		<div>
-		<a>
-		<div>
-		<div id="imagen-evolucion"></div>
-		
-		</div>
-		
-		</a>
-		</div>
-		</div>
-			<div id="dotContainer">
-				<span class="dot primero"></span> <span class="dot segundo"></span>
-			</div>
-		
-		</section>
-	</div>
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="poke.html">Pokedex</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li><a href="login.html">Iniciar Sesion</a></li>
+                        <li><a href="registro.html">Resgistrarme</a></li>
+                    </ul>
+                    <form class="navbar-form navbar-left">
+                        <div class="form-group">
+                            <input type="text" class="form-control"
+                                   placeholder="Busca un pokemon" list="lista" onkeypress="return LlenarConEnter(event)">
+                            <datalist id="lista"></datalist>
+                        </div>
+                        <button type="button" class="btn btn-default">Buscar</button>
+                    </form>
+                </div>
+            </nav>
 
 
-<script src="../javascript/prueba.js"></script>
 
-</body>
+        </header>
+        <div id="contenedor">
+
+            <div id="probando-evoluciones">
+            </div>
+
+            <section id="layoutIzquierdo">
+                <div id="layoutIzquierdoInterno">
+
+                    <div id="pokemonImage">
+                        <div>
+                            <img alt="Foto del pokemon" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/600.png">
+                        </div>
+                    </div>
+                    <br>
+                    <div id="habitat" class="textoGris">Montañes</div>
+                </div>
+                <div id="layoutDerechoInterno">
+                    <div id="div-titulo" class="textoGris">
+
+                        <div id="pokeballImage">
+                            <img src="../images/pokeball2.png" alt="hola">
+                        </div>
+
+                        <div id="titulo">200-Raichu</div>
+                    </div>
+                    <br> <br>
+
+                    <div id="infoPokemon">
+                        <div id="divTipos">
+
+
+                        </div>
+                        <br> <br>
+                        <div id="altura">
+                            <label>ALTURA</label> <span>0.4 m</span>
+                        </div>
+                        <div id="peso">
+                            <label>PESO</label> <span>6.0 kg</span>
+                        </div>
+
+                    </div>
+                    <br>
+                </div>
+                <div id="descripcion">Es un hecho establecido hace demasiado
+                    tiempo que un lector se distraerá con el contenido del texto de un
+                    sitio mientras que mira su diseño</div>
+            </section>
+            <section id="layoutDerecho">
+                <div id="opcion1">
+                    <p class="topic">Habilidades</p>
+                    <div id="moves">
+
+                    </div>
+                    <p class="topic">Moves</p>
+                    <div id="divOtrosMovs">
+
+                    </div>
+                </div>
+                <div id="opcion2" class="ocultar">
+                    <p class="topic">Evoluciones<p>
+                    <div>
+                        <a>
+                            <div>
+                                <div id="imagen-evolucion"></div>
+
+                            </div>
+
+                        </a>
+                    </div>
+                </div>
+                <div id="dotContainer">
+                    <span class="dot primero"></span> <span class="dot segundo"></span>
+                </div>
+
+            </section>
+        </div>
+
+
+        <script src="../javascript/prueba.js"></script>
+
+    </body>
 </html>

@@ -20,7 +20,7 @@ html, body {
 
 .login{
     max-width: 300px;
-    min-height: 500px;
+    min-height: 460px;
     margin: 30px auto;
     background-color: rgba(10,10,10,.9);
 }
@@ -157,7 +157,7 @@ input::-moz-placeholder {
 }
 
 .call-to-action {
-    margin: 22px 0;
+    margin: 0px 0;
     height: 130px;
     width: 100%;
     /*background-color: blue;*/
