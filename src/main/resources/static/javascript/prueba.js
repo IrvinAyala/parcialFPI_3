@@ -27,6 +27,7 @@ $(".btn").onclick = function (e) {
 	captarId(e);
 };
 function captarId(e) {
+	$("#contenedorModal").className="mostrar";
 	var pokemonSelecionado = $(".form-control").value;
     var nombresPokemon = document.getElementsByName(pokemonSelecionado);
     var pokemonABuscar = parseInt(nombresPokemon[0].getAttribute("id"));
@@ -65,6 +66,7 @@ function cargarDatos() {
 }
 
 function cargarEspecie(url) {
+
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -98,6 +100,7 @@ function mostrar() {
 
 	
 limpiar();
+$("#contenedorModal").className="ocultar";
 
 //    Para el nombre del pokemon
     $("#titulo").innerHTML =idPokemon+" - "+pokemon.name;
