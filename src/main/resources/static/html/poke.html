@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
     <head>
         <meta charset="UTF-8">
         <title>PokeViewer</title>
@@ -24,7 +23,7 @@
             <nav class="navbar navbar-inverse">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <a class="navbar-brand" href="poke.html">Pokedex</a>
+                        <a class="navbar-brand" href="#">Pokedex</a>
                     </div>
                     <ul class="nav navbar-nav">
                         <li><a href="login.html">Iniciar Sesion</a></li>
@@ -54,7 +53,8 @@
 
                     <div id="pokemonImage">
                         <div>
-                            <img alt="Foto del pokemon" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/600.png">
+                            <img alt="Foto del pokemon"
+                                 src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/600.png">
                         </div>
                     </div>
                     <br>
@@ -104,11 +104,13 @@
                 </div>
                 <div id="opcion2" class="ocultar">
                     <p class="topic">Evoluciones<p>
-                    <div>
-                        <a>
-                            <div>
-                                <div id="imagen-evolucion"></div>
-
+                    <div id="contenedorEvoluciones">
+                        <a id="enlaceEvolucion">
+                            <div id="evolucion">
+                                <div id="imagen-evolucion">
+                                    <img src="../images/pokeball2.png" alt="hola" id="imagen">
+                                </div>
+                                <div id="contenidoEvolucion">Machamp</div>
                             </div>
 
                         </a>

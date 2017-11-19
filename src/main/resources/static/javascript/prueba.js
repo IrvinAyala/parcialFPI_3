@@ -24,6 +24,16 @@ $(".btn").onclick = function (e) {
     cargarId(e);
 };
 
+function captarId(e) {
+    var pokemonSelecionado = $(".form-control").value;
+    var nombresPokemon = document.getElementsByName(pokemonSelecionado);
+    var pokemonABuscar = parseInt(nombresPokemon[0].getAttribute("id"));
+
+    idPokemon = pokemonABuscar;
+    e.preventDefault();
+    cargarDatos();
+}
+
 function cargarId(e) {
     var pokemonSelecionado = $(".form-control").value;
     var nombresPokemon = document.getElementsByName(pokemonSelecionado);
@@ -98,11 +108,11 @@ function mostrar() {
 //    Para el nombre del pokemon
     $("#titulo").innerHTML = idPokemon + " - " + pokemon.name;
 
-//    Para el peso del pokemon
-    $("#peso span").innerHTML = pokemon.weight;
+    //    Para el peso del pokemon
+    $("#peso span").innerHTML = pokemon.weight / 10 + "kg";
 
 //    Para la altura del pokemon
-    $("#altura span").innerHTML = pokemon.height;
+    $("#altura span").innerHTML = pokemon.height / 10 + "m";
 
 //    Para la descripcion del pokemon
     for (var i = 0; i < especie.flavor_text_entries.length; i++) {
@@ -185,9 +195,9 @@ function mostrar() {
         for (var i = 0; i < evolucion.chain.evolves_to.length; i++) {
 //            $("#evolucion2").innerHTML += evolucion.chain.evolves_to[i].species.name + "<br>";
             aEvoluciones[iContador] = evolucion.chain.evolves_to[i].species.url.slice(42, -1);
-            
+
             devolverEvolucion(aEvoluciones[iContador]);
-            
+
             console.log("urlEvolucion " + iContador + ":  " + aEvoluciones[iContador]);
             iContador = iContador + 1;
         }
@@ -202,9 +212,9 @@ function mostrar() {
             for (var j = 0; j < evolucion.chain.evolves_to[i].evolves_to.length; j++) {
 //                $("#evolucion3").innerHTML += evolucion.chain.evolves_to[i].evolves_to[j].species.name + "<br>";
                 aEvoluciones[iContador] = evolucion.chain.evolves_to[i].evolves_to[j].species.url.slice(42, -1);
-                
+
                 devolverEvolucion(aEvoluciones[iContador]);
-                
+
                 console.log("urlEvolucion " + iContador + ":  " + aEvoluciones[iContador]);
                 iContador = iContador + 1;
             }
