@@ -32,7 +32,8 @@
 				<form class="navbar-form navbar-left">
 					<div class="form-group">
 						<input type="text" class="form-control"
-							placeholder="Busca un pokemon">
+							placeholder="Busca un pokemon" list="lista" onkeypress="return LlenarConEnter(event)">
+							<datalist id="lista"></datalist>
 					</div>
 					<button type="button" class="btn btn-default">Buscar</button>
 				</form>

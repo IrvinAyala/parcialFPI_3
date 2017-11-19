@@ -106,11 +106,13 @@ position: relative;
 }
 #descripcion{
     clear: both;
-    height: auto;
+    height: 230px;
     width: 100%;
     border:15px solid green;
     background-color: #fff;
-    font-size: 35px;
+    font-size: 30px;
+    overflow: scroll;
+    padding: 0 10px;
 }
 
 .tipo1{
