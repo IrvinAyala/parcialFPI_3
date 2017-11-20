@@ -8,7 +8,7 @@ html,body{
     height: 100%;
 }
 body{
-	background-color: #54514F !important ;
+	background-color: #EEF2E7 !important ;
 }
 #contenedor{
     
@@ -220,8 +220,9 @@ position: relative;
 	display: inline-block;
 	width: 70%;
 	height: 50%;
-	padding: 5px;
 	
+	border: 5px solid cornflowerblue;
+	margin-bottom: 10px;
 }
 #opcion2{
 	width: 100%;
@@ -242,15 +243,52 @@ position: relative;
 #enlaceEvolucion:hover{
 	text-decoration: none;
 	cursor: pointer;
-	background-color: rgba(0,0,0,0.2);
+	
 	
 }
 #enlaceEvolucion:hover  #imagen{
-	    -webkit-filter: grayscale(100%); 
-    filter: grayscale(100%);
+	        -webkit-filter: brightness(200%); /* Safari */
+    filter: brightness(50%);
 }
 #enlaceEvolucion:hover #contenidoEvolucion{
 	background-color: #ccc;
+}
+
+
+
+#modal > p{
+    position: absolute;
+    bottom:-20%;
+    color: #fff;
+    left: 50%;
+}
+#contenedorModal{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    position: fixed;
+    top:0; 
+    left: 0;
+    text-align: center;
+    margin: auto;
+}
+
+#contenedor-img-modal{
+    width: 100%;
+    position: absolute;
+    bottom: 10%;
+}
+#modal{
+    width: 350px; 
+    height: 190px; 
+    font-size: 30px; 
+    font-weight: bold;  
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+    top:50%;
+    left: 33%;
+    transform: translateY(-50%);
 }
 
 
