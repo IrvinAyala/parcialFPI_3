@@ -116,7 +116,7 @@ function mostrar() {
 
 //    Para la descripcion del pokemon
     for (var i = 0; i < especie.flavor_text_entries.length; i++) {
-        if (especie.flavor_text_entries[i].language.name == "es") {
+        if (especie.flavor_text_entries[i].language.name == "en") {
             $("#descripcion").innerHTML = especie.flavor_text_entries[i].flavor_text;
             break;
         }
@@ -222,6 +222,10 @@ function mostrar() {
     } else {
         $("#evolucion3").innerHTML = "Desconocido";
     }
+
+
+
+
 
 }
 
