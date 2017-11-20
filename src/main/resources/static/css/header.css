@@ -1,0 +1,52 @@
+*{
+    box-sizing: border-box;
+}
+
+/*Quitar margin-bottom al header*/ 
+.navbar{
+    margin-bottom: 0px !important;
+}
+
+.navbar-nav > li{
+    font-weight: bold;
+    /*background-color: #111;*/
+    margin-right: 5px;
+}
+
+.navbar-header{
+    font-weight: bold;
+    /*background-color: #111;*/
+    margin-right: 5px; 
+}
+
+.navbar-header a{
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+/*Para los eventos*/
+.navbar-nav > li:hover{
+    background-color: #666;
+    /*margin: 5px;*/
+}
+
+.navbar-header:hover{
+    background-color: #666;
+}
+
+/*Para alinear a la derecha el enlace perfil*/
+#logeo{
+    float: right !important;
+}
+
+.mostrar{
+    display: inline-block;
+}
+
+.ocultar{
+    
+    display: none;
+}
+

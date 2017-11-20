@@ -4,6 +4,13 @@
     
 
 } 
+
+/*Para que muestre bien la fuente del header*/
+.container-fluid a, .container-fluid input, .container-fluid button{
+    font-family: "Comfortaa", "Helvetica", sans-serif;
+}
+
+
 html,body{
     height: 100%;
 }

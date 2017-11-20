@@ -15,9 +15,7 @@ function shake() {
 
 slideUpIn();
 slideLeftIn();
-$("button").on("click", function () {
+document.getElementsByClassName("call-to-action").onclick = function () {
     shake();
-});
+};
 
-
-//Para lo demas

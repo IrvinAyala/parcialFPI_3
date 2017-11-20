@@ -1,0 +1,15 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#contenedor-inicio{
+    /*padding: 1px 0;*/
+    height: 100%;
+    width: 100%;
+    background-image: url("../images/fondo-image.jpg");
+    background-size: cover;
+    color: #fff;
+    font-family: "Comfortaa", "Helvetica", sans-serif;
+}

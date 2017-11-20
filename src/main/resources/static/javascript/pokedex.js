@@ -21,11 +21,13 @@ function $(query) {
 }
 
 $(".btn").onclick = function (e) {
+//    location.href = "pokedex.html";
     captarId(e);
+
 };
 
 function captarId(e) {
-    $("#contenedorModal").className = "mostrar";
+
 
     var pokemonSelecionado = $(".form-control").value;
 
@@ -33,6 +35,10 @@ function captarId(e) {
     var pokemonABuscar = parseInt(nombresPokemon[0].getAttribute("id"));
 
     idPokemon = pokemonABuscar;
+    location.href = "pokedex.html?id=" + idPokemon;
+
+    $("#contenedorModal").className = "mostrar";
+
     e.preventDefault();
     cargarDatos();
 }
@@ -47,6 +53,8 @@ function limpiar() {
 
 function LlenarConEnter(e) {
     if (e.keyCode == 13) {
+
+        e.preventDefault();
         captarId(e);
     }
 }
@@ -235,20 +243,6 @@ function mostrar() {
 
 }
 
-//Para los botones rojos y mostrar los divs
-$(".primero").onclick = function () {
-    $("#opcion1").className = "opcion1 mostrar";
-    $("#opcion2").className = "opcion2 ocultar";
-    this.style.opacity = "1";
-    $(".segundo").style.opacity = "0.4";
-}
-
-$(".segundo").onclick = function () {
-    $("#opcion1").className = "opcion1 ocultar";
-    $("#opcion2").className = "opcion2 mostrar";
-    this.style.opacity = "1";
-    $(".primero").style.opacity = "0.4";
-}
 
 //Para las habilidades, movimientos y typos
 function generarElemento(identificador, texto, elemento, formato) {
@@ -258,6 +252,7 @@ function generarElemento(identificador, texto, elemento, formato) {
     elemento.className = formato;
     $(identificador).appendChild(elemento);
 }
+
 
 //Para el autocompletado
 window.onload = function () {
@@ -295,7 +290,6 @@ function creadorAutocomplete(listComplete) {
         $("#lista").appendChild(node);
     }
 }
-
 
 
 
