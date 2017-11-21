@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.stereotype.Component;
+
 import org.springframework.stereotype.Service;
 
 @Service
@@ -15,7 +15,8 @@ public class Controlador {
 
 	
 	
-	public static boolean userExist(String email) {
+	public static String[] userExist(String email) {
+	String values[]=new String[2];
 	Coneccion objeto=Coneccion.getInstance();
 	Connection coneccion=objeto.conectarDB();
 	PreparedStatement ps=null;
@@ -27,11 +28,16 @@ public class Controlador {
 		ps=coneccion.prepareStatement(query);
 		ps.setString(1, email);
 		rs=ps.executeQuery();
-		return rs.next();
+		if(rs.next()) {
+			values[0]=rs.getString(0);//tendra el correo
+			values[1]=rs.getString(1);//tendra la contraseña
+			
+		}
+		return values;
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();
-		return false;
+		return null;
 	}
 	finally {
 		objeto.cerrarStatement(ps);

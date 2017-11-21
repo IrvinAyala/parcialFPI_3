@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
 <title>PokeViewer</title>
@@ -31,9 +32,8 @@
 				<form class="navbar-form navbar-left">
 					<div class="form-group">
 						<input type="text" class="form-control"
-							placeholder="Busca un pokemon" list="lista"
-							onkeypress="return LlenarConEnter(event)">
-						<datalist id="lista"></datalist>
+							placeholder="Busca un pokemon" list="lista" onkeypress="return LlenarConEnter(event)">
+							<datalist id="lista"></datalist>
 					</div>
 					<button type="button" class="btn btn-default">Buscar</button>
 				</form>
@@ -68,7 +68,10 @@
 				<br> <br>
 
 				<div id="infoPokemon">
-					<div id="divTipos"></div>
+					<div id="divTipos">
+						
+						
+					</div>
 					<br> <br>
 					<div id="altura">
 						<label>ALTURA</label> <span>0.4 m</span>
@@ -85,40 +88,39 @@
 				sitio mientras que mira su diseño</div>
 		</section>
 		<section id="layoutDerecho">
-			<div id="opcion1">
-				<p class="topic">Habilidades</p>
-				<div id="moves"></div>
-				<p class="topic">Moves</p>
-				<div id="divOtrosMovs"></div>
+		<div id="opcion1">
+			<p class="topic">Habilidades</p>
+			<div id="moves">
+				
 			</div>
-			<div id="opcion2" class="ocultar">
-				<p class="topic">Evoluciones
-				<p>
-				<div id="contenedorEvoluciones">
-					
-				</div>
+			<p class="topic">Moves</p>
+			<div id="divOtrosMovs">
+				
 			</div>
+		</div>
+		<div id="opcion2" class="ocultar">
+		<p class="topic">Evoluciones<p>
+		<div id="contenedorEvoluciones">
+		<a id="enlaceEvolucion">
+		<div id="evolucion">
+		<div id="imagen-evolucion">
+		<img src="../images/pokeball2.png" alt="hola" id="imagen">
+		</div>
+		<div id="contenidoEvolucion">Machamp</div>
+		</div>
+		
+		</a>
+		</div>
+		</div>
 			<div id="dotContainer">
 				<span class="dot primero"></span> <span class="dot segundo"></span>
 			</div>
-
+		
 		</section>
 	</div>
-	<div id="contenedorModal" class="ocultar">
-		<div id="modal">
-
-			<p>cargando...</p>
-			<div id="contenedor-img-modal">
-				<img src="../images/pikachuCargando2.gif" alt="no se encontro">
-			</div>
 
 
-		</div>
-	</div>
-
-
-	<script src="../javascript/prueba.js"></script>
+<script src="../javascript/prueba.js"></script>
 
 </body>
-
 </html>

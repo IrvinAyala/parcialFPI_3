@@ -9,18 +9,18 @@ html, body {
 }
 
 .container {
-    padding: 1px 0;
-    height: 100%;
-    width: 100%;
-    background-image: url("../images/gobirthday.jpg");
-    background-size: cover;
+    /*padding: 1px 0;*/
+    height: 100% !important;
+    width: 100% !important;
+    background-image: url("../images/gobirthday.jpg")!important;
+    background-size: cover !important;
     color: #fff;
     font-family: "Comfortaa", "Helvetica", sans-serif;
 }
 
 .login{
     max-width: 300px;
-    min-height: 500px;
+    min-height: 460px;
     margin: 30px auto;
     background-color: rgba(10,10,10,.9);
 }
@@ -76,9 +76,10 @@ html, body {
     /*background-color: green;*/
 }
 #unete{
+    text-align: center !important;
     margin-top: 25px;
     display: inline-block;
-    margin-right: 20px;
+    margin-left: 40px;
     font-size: 20px;
     font-weight: bold;
 }
@@ -88,6 +89,11 @@ html, body {
 }
 #acciones p{
     margin-top: 70px;
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+
 }
 
 .row {
@@ -133,7 +139,7 @@ html, body {
     animation: dash 1s .4s linear forwards;
 }
 
-input {
+.container input {
     position: absolute;
     width: 195px;
     height: 30px;
@@ -144,7 +150,7 @@ input {
 }
 
 input:focus,
-button:focus {
+.btnEfecto:focus {
     outline: none;
 }
 
@@ -157,13 +163,17 @@ input::-moz-placeholder {
 }
 
 .call-to-action {
-    margin: 22px 0;
+    margin: 0px 0;
     height: 130px;
     width: 100%;
     /*background-color: blue;*/
 }
 .call-to-action p{
+    text-align: center;
+    font-size: 14px;
     margin-top: 80px;
+    width: 100%;
+    font-weight: bold;
 }
 
 input[type="submit"] {
@@ -184,11 +194,12 @@ input[type="submit"] {
     user-select:none;
 }
 
-button:hover {
+.btnEfecto:hover {
     background-color: #26d69a;
+    font-weight: bold;
 }
 
-button:active {
+.btnEfecto:active {
     background-color: #1eaa7a;
 }
 
@@ -207,8 +218,7 @@ p a {
     font-weight: bold;
 }
 
-label,
-p a:hover {
+label, p a:hover {
     -webkit-cursor: pointer;
     cursor: pointer;
 }
@@ -224,4 +234,5 @@ p a:hover {
         stroke-dashoffset: 0;
     }
 }
+
 

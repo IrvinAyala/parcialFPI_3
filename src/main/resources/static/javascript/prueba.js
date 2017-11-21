@@ -5,12 +5,16 @@ var idPokemon;
 var pokemon;
 var especie;
 var evolucion;
-var pokemonEvolucion
 
 //Array para los datos
 var aAbities = [];
 var aMovs = [];
 var aTypes = [];
+
+//Para guardar las url de las evoluciones
+//var urlEvolucion1;
+//var urlEvolucion2;
+//var urlEvolucion3;
 
 //Para las evoluciones
 var aEvoluciones = [];
@@ -19,40 +23,33 @@ var iContador = 0;
 function $(query) {
     return document.querySelector(query);
 }
-
 $(".btn").onclick = function (e) {
-    captarId(e);
+	captarId(e);
 };
-
 function captarId(e) {
-	$("#contenedorModal").className="mostrar";
-
 	var pokemonSelecionado = $(".form-control").value;
-
     var nombresPokemon = document.getElementsByName(pokemonSelecionado);
     var pokemonABuscar = parseInt(nombresPokemon[0].getAttribute("id"));
 
     idPokemon = pokemonABuscar;
-	 e.preventDefault();
+    e.preventDefault();
     cargarDatos();
 }
 
 function limpiar() {
-	$("#contenedorEvoluciones").innerHTML="";
-    $("#divTipos").innerHTML = "";
-    $("#divOtrosMovs").innerHTML = "";
-    $("#moves").innerHTML = "";
+
+	$("#divTipos").innerHTML="";
+	$("#divOtrosMovs").innerHTML="";
+	$("#moves").innerHTML="";
 }
 
 
 function LlenarConEnter(e) {
     if (e.keyCode == 13) {
-        captarId(e);
+       captarId(e);
     }
 }
-
 function cargarDatos() {
-	$("#contenedorModal").className="mostrar";
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -68,13 +65,12 @@ function cargarDatos() {
 }
 
 function cargarEspecie(url) {
-
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             console.log("JSON especies");
             especie = JSON.parse(this.responseText);
-            console.log(especie);
+            console.log("espeecie");
             var url2 = especie.evolution_chain.url;
             cargarEvoluciones(url2);
         }
@@ -89,7 +85,7 @@ function cargarEvoluciones(url2) {
         if (this.readyState == 4 && this.status == 200) {
             console.log("JSON evoluciones");
             evolucion = JSON.parse(this.responseText);
-            console.log(evolucion);
+            console.log("evolucion");
             mostrar();
         }
     };
@@ -100,18 +96,17 @@ function cargarEvoluciones(url2) {
 
 function mostrar() {
 
+	
 limpiar();
-$("#contenedorModal").className="ocultar";
-
 
 //    Para el nombre del pokemon
-    $("#titulo").innerHTML = idPokemon + " - " + pokemon.name;
+    $("#titulo").innerHTML =idPokemon+" - "+pokemon.name;
 
     //    Para el peso del pokemon
-    $("#peso span").innerHTML = pokemon.weight / 10 + "kg";
+    $("#peso span").innerHTML = pokemon.weight/10+"kg";
 
 //    Para la altura del pokemon
-    $("#altura span").innerHTML = pokemon.height / 10 + "m";
+    $("#altura span").innerHTML = pokemon.height/10+"m";
 
 //    Para la descripcion del pokemon
     for (var i = 0; i < especie.flavor_text_entries.length; i++) {
@@ -121,145 +116,116 @@ $("#contenedorModal").className="ocultar";
         }
     }
 
+
 //    Para la imagen del pokemon
     $("#pokemonImage img").src = pokemon.sprites.front_default;
 
 //    Para las habilidades
     for (var i = 0; i < pokemon.abilities.length; i++) {
-        var nombreHabilidad = pokemon.abilities[i].ability.name;
-        generarElemento("#moves", nombreHabilidad, "div", "moves");
+        var nombreHabilidad=pokemon.abilities[i].ability.name;
+        generarElemento("#moves", nombreHabilidad, "div","moves");
     }
 
 //    Para los movimientos
     for (var i = 0; i < 4; i++) {
         var nombreMovimiento = pokemon.moves[i].move.name;
-        generarElemento("#divOtrosMovs", nombreMovimiento, "div", "moves");
+       generarElemento("#divOtrosMovs", nombreMovimiento, "div","moves");
     }
 
 //    Para los tipos
     for (var i = 0; i < pokemon.types.length; i++) {
         var tipo = pokemon.types[i].type.name;
-        generarElemento("#divTipos", tipo, "span", "tipo" + (i + 1))
+        generarElemento("#divTipos", tipo, "span", "tipo"+(i+1))
+        
     }
+    
 
 //    Para el habitat
     if (especie.habitat != null && especie.habitat != "undefined") {
         $("#habitat").innerHTML = especie.habitat.name;
     } else
     {
-        $("#habitat").innerHTML = "Desconocido";
+        $("#habitat").innerHTML = "Unknown";
     }
 
 //    Para la generacion
 //    $("#generacion").innerHTML = especie.generation.name;
 
 //    Para la evolucion 1
+
 //    $("#evolucion1").innerHTML = evolucion.chain.species.name;
-    aEvoluciones[0] = evolucion.chain.species.url.slice(42, -1);
-    console.log(aEvoluciones[0]!==pokemon.id);
-    if(aEvoluciones[0]!=pokemon.id){
-    devolverEvolucion(aEvoluciones[0]);
-}
-//    generarElemento("#probancdo-evoluciones", )
-    console.log("urlEvolucion 0:  " + aEvoluciones[0]);
+//    aEvoluciones[0] = evolucion.chain.species.url.slice(42, -1);
 //    iContador = 1;
-
-//Para los JSON de las evoluciones
-    function devolverEvolucion(idEvolucion) {
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-//            
-                pokemonEvolucion = JSON.parse(this.responseText);
-//            
-//            
-                var ruta = pokemonEvolucion.sprites.front_default;
-
-                var contenido=`<div id="evolucion">
-				<div id="imagen-evolucion">
-					<img src="${ruta}" alt="hola" id="imagen">
-				</div>
-				<div id="contenidoEvolucion">${pokemonEvolucion.name}</div>
-			</div>`;
-                var node = document.createElement("a");
-                node.id="enlaceEvolucion";
-                node.innerHTML=contenido;
-               
-                node.setAttribute("href","poke.html?idPokemon="+idEvolucion);
-                $("#contenedorEvoluciones").appendChild(node);
-                console.log("urlEvolucion 0:  " + aEvoluciones[0]);
-                iContador = 1;
-            }
-        };
-        xhttp.open("GET", "https://pokeapi.co/api/v2/pokemon/" + idEvolucion + "/", true);
-        xhttp.send();
-    }
-
+//    console.log("urlEvolucion 1:  " + aEvoluciones[0]);
 
 
 
 //    Para la evolucion 2
-    if (evolucion.chain.evolves_to[0] != null && evolucion.chain.evolves_to[0] != undefined) {
-        for (var i = 0; i < evolucion.chain.evolves_to.length; i++) {
+//    if (evolucion.chain.evolves_to[0] != null && evolucion.chain.evolves_to[0] != undefined) {
+//        for (var i = 0; i < evolucion.chain.evolves_to.length; i++) {
 //            $("#evolucion2").innerHTML += evolucion.chain.evolves_to[i].species.name + "<br>";
-            aEvoluciones[iContador] = evolucion.chain.evolves_to[i].species.url.slice(42, -1);
-            if(aEvoluciones[iContador]!=pokemon.id){
-            devolverEvolucion(aEvoluciones[iContador]);
-            }
-            console.log("urlEvolucion " + iContador + ":  " + aEvoluciones[iContador]);
-            iContador = iContador + 1;
-        }
-
-    }
+//            aEvoluciones[iContador] = evolucion.chain.evolves_to[i].species.url.slice(42, -1);
+//            console.log("urlEvolucion " + iContador + ":  " + aEvoluciones[iContador]);
+//            iContador = iContador + 1;
+//        }
+//
+//    } else {
+//        $("#evolucion2").innerHTML = "Desconocido";
+//    }
+//
+////    Para la evolucion 3
+//    if ((evolucion.chain.evolves_to[0] != null && evolucion.chain.evolves_to[0] != undefined) && (evolucion.chain.evolves_to[0].evolves_to[0] != null && evolucion.chain.evolves_to[0].evolves_to[0] != undefined)) {
+//        for (var i = 0; i < evolucion.chain.evolves_to.length; i++) {
+//            for (var j = 0; j < evolucion.chain.evolves_to[i].evolves_to.length; j++) {
+//                $("#evolucion3").innerHTML += evolucion.chain.evolves_to[i].evolves_to[j].species.name+ "<br>";
+//                aEvoluciones[iContador] = evolucion.chain.evolves_to[i].evolves_to[j].species.url.slice(42, -1);
+//                console.log("urlEvolucion " + iContador + ":  " + aEvoluciones[iContador]);
+//                iContador = iContador + 1;
+//            }
+//        }
+//    } else {
+//        $("#evolucion3").innerHTML = "Desconocido";
+//    }
+}
 
 //    Para la evolucion 3
-    if ((evolucion.chain.evolves_to[0] != null && evolucion.chain.evolves_to[0] != undefined) && (evolucion.chain.evolves_to[0].evolves_to[0] != null && evolucion.chain.evolves_to[0].evolves_to[0] != undefined)) {
-        for (var i = 0; i < evolucion.chain.evolves_to.length; i++) {
-            for (var j = 0; j < evolucion.chain.evolves_to[i].evolves_to.length; j++) {
+//    if ((evolucion.chain.evolves_to[0] != null && evolucion.chain.evolves_to[0] != undefined) && (evolucion.chain.evolves_to[0].evolves_to[0] != null && evolucion.chain.evolves_to[0].evolves_to[0] != undefined)) {
+//        for (var i = 0; i < evolucion.chain.evolves_to.length; i++) {
+//            for (var j = 0; j < evolucion.chain.evolves_to[i].evolves_to.length; j++) {
 //                $("#evolucion3").innerHTML += evolucion.chain.evolves_to[i].evolves_to[j].species.name + "<br>";
-                aEvoluciones[iContador] = evolucion.chain.evolves_to[i].evolves_to[j].species.url.slice(42, -1);
-                if(aEvoluciones[iContador]!=pokemon.id){
-                devolverEvolucion(aEvoluciones[iContador]);
-                }
-                console.log("urlEvolucion " + iContador + ":  " + aEvoluciones[iContador]);
-                iContador = iContador + 1;
-            }
-        }
-    }
+//                aEvoluciones[iContador] = evolucion.chain.evolves_to[i].evolves_to[j].species.url.slice(42, -1);
+//                console.log("urlEvolucion " + iContador + ":  " + aEvoluciones[iContador]);
+//                iContador = iContador + 1;
+//            }
+//        }
+//    } else {
+//        $("#evolucion3").innerHTML = "Desconocido";
+//    }
 
-}
 
-//Para los botones rojos y mostrar los divs
-$(".primero").onclick = function () {
-    $("#opcion1").className = "opcion1 mostrar";
-    $("#opcion2").className = "opcion2 ocultar";
-    this.style.opacity = "1";
-    $(".segundo").style.opacity = "0.4";
+$(".primero").onclick=function(){
+	$("#opcion1").className="opcion1 mostrar";
+	$("#opcion2").className="opcion2 ocultar";
+	this.style.opacity="1";
+	$(".segundo").style.opacity="0.4";
 }
-$(".segundo").onclick = function () {
-    $("#opcion1").className = "opcion1 ocultar";
-    $("#opcion2").className = "opcion2 mostrar";
-    this.style.opacity = "1";
-    $(".primero").style.opacity = "0.4";
+$(".segundo").onclick=function(){
+	$("#opcion1").className="opcion1 ocultar";
+	$("#opcion2").className="opcion2 mostrar";
+	this.style.opacity="1";
+	$(".primero").style.opacity="0.4";
 }
-//Para las habilidades, movimientos y typos
-function generarElemento(identificador, texto, elemento, formato) {
-    var elemento = document.createElement(elemento);
-    var textoElemento = document.createTextNode(texto);
+function generarElemento(identificador,texto,elemento,formato) {
+    var elemento=document.createElement(elemento);
+    var textoElemento=document.createTextNode(texto);
     elemento.appendChild(textoElemento);
-    elemento.className = formato;
+    elemento.className=formato;
     $(identificador).appendChild(elemento);
-//    console.log(elemento);
-}
+    console.log(elemento);
 
+}
 //Para el autocompletado
 window.onload = function () {
-	idPokemon=parseFloat(location.href.split("=")[1]);
-	if(idPokemon>0){
-console.log("onload entro");
-		
-		cargarDatos();
-	}
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -288,8 +254,4 @@ function creadorAutocomplete(listComplete) {
         $("#lista").appendChild(node);
     }
 }
-
-
-
-
 
