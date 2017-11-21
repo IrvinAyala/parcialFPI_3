@@ -180,7 +180,7 @@ function mostrar() {
                 node.id = "enlaceEvolucion";
                 node.innerHTML = contenido;
 
-                node.setAttribute("href", "poke.html?idPokemon=" + idEvolucion);
+                node.setAttribute("href", "pokedex.html?idPokemon=" + idEvolucion);
                 $("#contenedorEvoluciones").appendChild(node);
             }
         };
