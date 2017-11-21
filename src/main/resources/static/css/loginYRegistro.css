@@ -70,7 +70,7 @@ html, body {
 
 #registro-form {
     padding: 8px 20px 20px;
-    height: 120px;
+    height: 300px;
     width: 100%;
     margin-top: 20px;
     /*background-color: green;*/
@@ -85,7 +85,7 @@ html, body {
 }
 
 #acciones{
-    margin-top: 55px;
+    margin-top: 20px;
 }
 #acciones p{
     margin-top: 70px;
@@ -119,6 +119,22 @@ html, body {
 .user-icon {
     margin: 5px;
 }
+.mensajeCorreo{
+	text-align: center;
+	background-color: #EC0A37;
+	width: 100%;
+	font-weight: bold;
+	color: #fff;
+	text-shadow: 2px 2px #000;
+
+}
+.ocultar{
+	display: none;
+}
+.mostrar{
+	display: block;
+}
+
 
 .password-icon .key-path,
 .user-icon .user-path{
