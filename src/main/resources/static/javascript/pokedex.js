@@ -280,16 +280,16 @@ window.onload = function () {
     xmlhttp.send();
 }
 
-function creadorAutocomplete(listComplete) {
-    for (i = 0; i < 802; i++) {
-        var node = document.createElement("OPTION");
-        var textnode = document.createTextNode(listComplete[i]);
-        node.appendChild(textnode);
-        node.setAttribute("id", (i + 1));
-        node.setAttribute("name", listComplete[i]);
-        $("#lista").appendChild(node);
-    }
-}
+//function creadorAutocomplete(listComplete) {
+//    for (i = 0; i < 802; i++) {
+//        var node = document.createElement("OPTION");
+//        var textnode = document.createTextNode(listComplete[i]);
+//        node.appendChild(textnode);
+//        node.setAttribute("id", (i + 1));
+//        node.setAttribute("name", listComplete[i]);
+//        $("#lista").appendChild(node);
+//    }
+//}
 
 
 
