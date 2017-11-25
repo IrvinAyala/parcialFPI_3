@@ -1,8 +1,9 @@
 
 
-function $(query) {
-	return document.querySelector(query);
-}
+//function $(query) {
+//	return document.querySelector(query);
+//}
+
 $("#login-registro").onsubmit=function (e) {
     e.preventDefault();
     registro(this);

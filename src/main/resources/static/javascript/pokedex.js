@@ -28,9 +28,7 @@ $(".btn").onclick = function (e) {
 
 function captarId(e) {
 
-
     var pokemonSelecionado = $(".form-control").value;
-
     var nombresPokemon = document.getElementsByName(pokemonSelecionado);
     var pokemonABuscar = parseInt(nombresPokemon[0].getAttribute("id"));
 
@@ -109,6 +107,7 @@ function cargarEvoluciones(url2) {
 function mostrar() {
 
     limpiar();
+
     $("#contenedorModal").className = "ocultar";
 
 
@@ -171,10 +170,10 @@ function mostrar() {
                 var ruta = pokemonEvolucion.sprites.front_default;
 
                 var contenido = `<div id="evolucion">
-				<div id="imagen-evolucion">
-					<img src="${ruta}" alt="hola" id="imagen">
-				</div>
-				<div id="contenidoEvolucion">${pokemonEvolucion.name}</div>
+                                    <div id="imagen-evolucion">
+                                        <img src="${ruta}" alt="hola" id="imagen">
+                                    </div>
+                                    <div id="contenidoEvolucion">${pokemonEvolucion.name}</div>
                                 </div>`;
                 var node = document.createElement("a");
                 node.id = "enlaceEvolucion";
@@ -207,32 +206,30 @@ function mostrar() {
             }
             console.log("urlEvolucion " + iContador + ":  " + aEvoluciones[iContador]);
             iContador = iContador + 1;
-        }
 
-    }
 
-//    Para la evolucion 3
-    if ((evolucion.chain.evolves_to[0] != null && evolucion.chain.evolves_to[0] != undefined) && (evolucion.chain.evolves_to[0].evolves_to[0] != null && evolucion.chain.evolves_to[0].evolves_to[0] != undefined)) {
-        for (var i = 0; i < evolucion.chain.evolves_to.length; i++) {
-            for (var j = 0; j < evolucion.chain.evolves_to[i].evolves_to.length; j++) {
+            //    Para la evolucion 3
+            if ((evolucion.chain.evolves_to[0].evolves_to[0] != null && evolucion.chain.evolves_to[0].evolves_to[0] != undefined)) {
+                for (var j = 0; j < evolucion.chain.evolves_to[i].evolves_to.length; j++) {
 //                $("#evolucion3").innerHTML += evolucion.chain.evolves_to[i].evolves_to[j].species.name + "<br>";
-                aEvoluciones[iContador] = evolucion.chain.evolves_to[i].evolves_to[j].species.url.slice(42, -1);
-                if (aEvoluciones[iContador] != pokemon.id) {
-                    devolverEvolucion(aEvoluciones[iContador]);
-                }
-                console.log("urlEvolucion " + iContador + ":  " + aEvoluciones[iContador]);
-                iContador = iContador + 1;
+                    aEvoluciones[iContador] = evolucion.chain.evolves_to[i].evolves_to[j].species.url.slice(42, -1);
+                    if (aEvoluciones[iContador] != pokemon.id) {
+                        devolverEvolucion(aEvoluciones[iContador]);
+                    }
+                    console.log("urlEvolucion " + iContador + ":  " + aEvoluciones[iContador]);
+                    iContador = iContador + 1;
 
-                ///////////////////// PARA LAS EVOLUCIONES ESPECIALES //////////////////////////////////
-                if (evolucion.chain.evolves_to[i].evolves_to[j].evolves_to.length != null && evolucion.chain.evolves_to[i].evolves_to[j].evolves_to != undefined) {
-                    for (var k = 0; k < evolucion.chain.evolves_to[i].evolves_to[j].evolves_to.length; k++) {
+                    ///////////////////// PARA LAS EVOLUCIONES ESPECIALES //////////////////////////////////
+                    if (evolucion.chain.evolves_to[i].evolves_to[j].evolves_to.length != null && evolucion.chain.evolves_to[i].evolves_to[j].evolves_to != undefined) {
+                        for (var k = 0; k < evolucion.chain.evolves_to[i].evolves_to[j].evolves_to.length; k++) {
 
-                        aEvoluciones[iContador] = evolucion.chain.evolves_to[i].evolves_to[j].evolves_to[k].species.url.slice(42, -1);
-                        if (aEvoluciones[iContador] != pokemon.id) {
-                            devolverEvolucion(aEvoluciones[iContador]);
+                            aEvoluciones[iContador] = evolucion.chain.evolves_to[i].evolves_to[j].evolves_to[k].species.url.slice(42, -1);
+                            if (aEvoluciones[iContador] != pokemon.id) {
+                                devolverEvolucion(aEvoluciones[iContador]);
+                            }
+                            console.log("urlEvolucion " + iContador + ":  " + aEvoluciones[iContador]);
+                            iContador = iContador + 1;
                         }
-                        console.log("urlEvolucion " + iContador + ":  " + aEvoluciones[iContador]);
-                        iContador = iContador + 1;
                     }
                 }
             }
@@ -280,16 +277,16 @@ window.onload = function () {
     xmlhttp.send();
 }
 
-//function creadorAutocomplete(listComplete) {
-//    for (i = 0; i < 802; i++) {
-//        var node = document.createElement("OPTION");
-//        var textnode = document.createTextNode(listComplete[i]);
-//        node.appendChild(textnode);
-//        node.setAttribute("id", (i + 1));
-//        node.setAttribute("name", listComplete[i]);
-//        $("#lista").appendChild(node);
-//    }
-//}
+function creadorAutocomplete(listComplete) {
+    for (i = 0; i < 802; i++) {
+        var node = document.createElement("OPTION");
+        var textnode = document.createTextNode(listComplete[i]);
+        node.appendChild(textnode);
+        node.setAttribute("id", (i + 1));
+        node.setAttribute("name", listComplete[i]);
+        $("#lista").appendChild(node);
+    }
+}
 
 
 
