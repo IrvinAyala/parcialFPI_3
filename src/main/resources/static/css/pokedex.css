@@ -13,7 +13,7 @@ html,body{
     height: 100%;
 }
 body{
-	background-color: #EEF2E7 !important ;
+	background-color: #54514F !important ;
 }
 #contenedor{
     
@@ -225,8 +225,8 @@ position: relative;
 	display: inline-block;
 	width: 70%;
 	height: 50%;
-	
-	border: 5px solid cornflowerblue;
+	padding: 5px;
+	/*border: 5px solid cornflowerblue;*/
 	margin-bottom: 10px;
 }
 #opcion2{
@@ -248,12 +248,12 @@ position: relative;
 #enlaceEvolucion:hover{
 	text-decoration: none;
 	cursor: pointer;
-	
+	background-color: rgba(0,0,0,0.2);
 	
 }
 #enlaceEvolucion:hover  #imagen{
-	        -webkit-filter: brightness(200%); /* Safari */
-    filter: brightness(50%);
+	        -webkit-filter: brightness(100%); /* Safari */
+    filter: brightness(100%);
 }
 #enlaceEvolucion:hover #contenidoEvolucion{
 	background-color: #ccc;
