@@ -1,7 +1,7 @@
 // Para los efectos 
 
 function slideUpIn() {
-    $("#login").velocity("transition.slideUpIn", 1250)
+    $(".login").velocity("transition.slideUpIn", 1250)
 }
 ;
 

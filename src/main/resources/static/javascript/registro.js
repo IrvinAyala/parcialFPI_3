@@ -1,3 +1,4 @@
+
 $("#registro-form").onsubmit=function(e){
 	
 	e.preventDefault();
@@ -21,8 +22,12 @@ function registro(form){
   		$("#username_input").focus();
   	}
   	if(respuesta==="href"){
-  		alert(document.cookie);
   		location.href="inicio.html";
+  		setInterval(function(){
+  			if(document.cookie.lenght<=0){
+  				location.href="inicio.html";
+  			}
+  		},1000);
   	}
       }  
     };
@@ -30,4 +35,3 @@ function registro(form){
         xmlHttp.open("POST","http://localhost:8080/pokedex",true);
         xmlHttp.send(new FormData(form));
 }
-

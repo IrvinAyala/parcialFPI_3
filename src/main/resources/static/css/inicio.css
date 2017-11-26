@@ -4,12 +4,17 @@ html, body {
     overflow: hidden;
 }
 
-#contenedor-inicio{
-    /*padding: 1px 0;*/
-    height: 100%;
-    width: 100%;
+body{
     background-image: url("../images/fondo-image.jpg");
     background-size: cover;
+}
+
+#contenedor-inicio{
+    /*padding: 1px 0;*/
+    height: 60%;
+    width: 70%;
+    background-color: rgba(0,0,0,0.8);
+    margin: 70px auto;
     color: #fff;
     font-family: "Comfortaa", "Helvetica", sans-serif;
 }

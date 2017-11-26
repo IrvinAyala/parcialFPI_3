@@ -150,7 +150,7 @@ html, body {
     animation: dash 3s .3s linear forwards;
 }
 
-.user-icon .user-path {
+.user-icon, .user-path {
     -webkit-animation: dash 1s .4s linear forwards;
     animation: dash 1s .4s linear forwards;
 }

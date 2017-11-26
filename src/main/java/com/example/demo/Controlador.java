@@ -17,12 +17,14 @@ public class Controlador {
 	
 	public static String[] userExist(String email) {
 	String values[]=new String[3];
+
 	Coneccion objeto=Coneccion.getInstance();
 	Connection coneccion=objeto.conectarDB();
 	PreparedStatement ps=null;
 	ResultSet rs=null;
 	String query
 			="SELECT correo,password,idUsuario FROM usuarios WHERE correo=?";
+
 	
 	try {
 		ps=coneccion.prepareStatement(query);
@@ -32,6 +34,7 @@ public class Controlador {
 			values[0]=rs.getString(1);//tendra el correo
 			values[1]=rs.getString(2);//tendra la contraseña
 			values[2]=rs.getString(3);//tendra el id
+
 		}
 		return values;
 	} catch (SQLException e) {
@@ -81,7 +84,7 @@ public class Controlador {
 							+ "VALUES (?,?,?)";
 		String query2
 				="select count(idUsuario) from usuarios";
-						
+
 		try {
 			ps=coneccion.prepareStatement(query);
 			ps.setString(1, user.getNombre());
@@ -92,6 +95,7 @@ public class Controlador {
 			ps=coneccion.prepareStatement(query2);
 			rs=ps.executeQuery();
 			return rs.getInt(1);
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -102,10 +106,9 @@ public class Controlador {
 			objeto.cerrarConeccion(coneccion);
 		}
 	}
-	
-	
-	
+
 	public static int insertarFavorito(int idPokemon,int idUser,String url) {
+
 		Coneccion objeto=Coneccion.getInstance();
 		Connection coneccion=objeto.conectarDB();
 		PreparedStatement ps=null;
@@ -117,6 +120,7 @@ public class Controlador {
 			ps.setInt(1, idPokemon);
 			ps.setInt(2, idUser);
 			ps.setString(3, url);
+
 			return ps.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -128,26 +132,29 @@ public class Controlador {
 		}
 		
 	}
-	public static List<String> favoritos(int idUsuario){
+	public static List<Integer> favoritos(int idUsuario){
+
 		Coneccion objeto=Coneccion.getInstance();
 		Connection coneccion=objeto.conectarDB();
 		PreparedStatement ps=null;
 		ResultSet rs=null;
-		List<String> lista=new ArrayList<>();
+		List<Integer> lista=new ArrayList<>();
 		String query
 		="SELECT idPokemon,url FROM pokemon WHERE idUsuario=?";
+
 		
 		try {
 			ps=coneccion.prepareStatement(query);
 			ps.setInt(1, idUsuario);
 			rs=ps.executeQuery();
 			while(rs.next()) {
-				lista.add(rs.getString(2));
+				lista.add(rs.getInt(1));
 			}
 			return lista;
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return null;
+
 		}finally {
 			objeto.cerrarStatement(ps);
 			objeto.cerrarConeccion(coneccion);

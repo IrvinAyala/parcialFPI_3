@@ -21,8 +21,9 @@ function logueo(form){
   		$("#username_input").focus();
   	}
   	if(respuesta==="href"){
-  		alert(document.cookie);
+  		
   		location.href="pokedex.html";
+  		
   	}
       }  
     };
