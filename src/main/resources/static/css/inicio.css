@@ -17,5 +17,29 @@ body{
     margin: 70px auto;
     color: #fff;
     font-family: "Comfortaa", "Helvetica", sans-serif;
+    position: relative;
+    padding: 10px;
 }
+
+#titulo-inicio{
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 25%;
+    position: absolute;
+    color: teal;
+}
+
+#contenido-inicio{
+    display: block;
+    font-size: 17px;
+    text-align: center;
+    margin-top: 90px !important;
+    
+}
+
+
+
+
 
