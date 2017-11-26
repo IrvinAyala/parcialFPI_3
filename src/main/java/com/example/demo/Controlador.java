@@ -16,13 +16,13 @@ public class Controlador {
 	
 	
 	public static String[] userExist(String email) {
-	String values[]=new String[2];
+	String values[]=new String[3];
 	Coneccion objeto=Coneccion.getInstance();
 	Connection coneccion=objeto.conectarDB();
 	PreparedStatement ps=null;
 	ResultSet rs=null;
 	String query
-			="SELECT correo,password FROM usuarios WHERE correo=?";
+			="SELECT correo,password,idUsuario FROM usuarios WHERE correo=?";
 	
 	try {
 		ps=coneccion.prepareStatement(query);
@@ -31,7 +31,7 @@ public class Controlador {
 		if(rs.next()) {
 			values[0]=rs.getString(1);//tendra el correo
 			values[1]=rs.getString(2);//tendra la contraseña
-			
+			values[2]=rs.getString(3);//tendra el id
 		}
 		return values;
 	} catch (SQLException e) {
@@ -105,17 +105,18 @@ public class Controlador {
 	
 	
 	
-	public static int insertarFavorito(int idUser,int idPokemon) {
+	public static int insertarFavorito(int idPokemon,int idUser,String url) {
 		Coneccion objeto=Coneccion.getInstance();
 		Connection coneccion=objeto.conectarDB();
 		PreparedStatement ps=null;
 		String query
-		="INSERT INTO pokemon (idPokemon,idUsuario)"
-				+ "VALUES (?,?)";
+		="INSERT INTO pokemon (idPokemon,idUsuario,url)"
+				+ "VALUES (?,?,?)";
 		try {
 			ps=coneccion.prepareStatement(query);
-			ps.setInt(1, idUser);
-			ps.setInt(2, idPokemon);
+			ps.setInt(1, idPokemon);
+			ps.setInt(2, idUser);
+			ps.setString(3, url);
 			return ps.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -127,27 +128,26 @@ public class Controlador {
 		}
 		
 	}
-	public static List<Integer> favoritos(int idUsuario){
+	public static List<String> favoritos(int idUsuario){
 		Coneccion objeto=Coneccion.getInstance();
 		Connection coneccion=objeto.conectarDB();
 		PreparedStatement ps=null;
 		ResultSet rs=null;
-		List<Integer> lista=new ArrayList<>();
+		List<String> lista=new ArrayList<>();
 		String query
-		="SELECT idPokemon FROM pokemon WHERE idUsuario=?";
+		="SELECT idPokemon,url FROM pokemon WHERE idUsuario=?";
 		
 		try {
 			ps=coneccion.prepareStatement(query);
 			ps.setInt(1, idUsuario);
 			rs=ps.executeQuery();
 			while(rs.next()) {
-				lista.add(rs.getInt(0));
+				lista.add(rs.getString(2));
 			}
 			return lista;
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return lista;
+			return null;
 		}finally {
 			objeto.cerrarStatement(ps);
 			objeto.cerrarConeccion(coneccion);

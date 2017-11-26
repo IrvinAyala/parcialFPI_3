@@ -6,7 +6,7 @@ var pokemon;
 var especie;
 var evolucion;
 var pokemonEvolucion
-
+var urlPokemon;
 //Array para los datos
 var aAbities = [];
 var aMovs = [];
@@ -61,6 +61,7 @@ function LlenarConEnter(e) {
 
 function cargarDatos() {
     $("#contenedorModal").className = "mostrar";
+ 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -71,7 +72,8 @@ function cargarDatos() {
             cargarEspecie(url);
         }
     };
-    xhttp.open("GET", "https://pokeapi.co/api/v2/pokemon/" + idPokemon + "/", true);
+   urlPokemon="https://pokeapi.co/api/v2/pokemon/" + idPokemon + "/";
+    xhttp.open("GET",urlPokemon , true);
     xhttp.send();
 }
 
@@ -290,6 +292,8 @@ function creadorAutocomplete(listComplete) {
         $("#lista").appendChild(node);
     }
 }
+
+
 
 
 

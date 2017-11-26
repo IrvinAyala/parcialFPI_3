@@ -1,11 +1,7 @@
-function $(query){
-	return document.querySelector(query);
-}
-
-$("#registro-form").onsubmit=function(e){
+$("#login").onsubmit=function(e){
 	
 	e.preventDefault();
-	registro(this);
+	logueo(this);
 	
 };
 $("#username_input").onkeypress=function(){
@@ -14,18 +10,19 @@ $("#username_input").onkeypress=function(){
 }
 
 
-function registro(form){
+function logueo(form){
 
 	xmlHttp = new XMLHttpRequest();
         xmlHttp.onreadystatechange=function () {
       if(this.readyState===4 && this.status===200){
       var respuesta=this.responseText;
-  	if(respuesta==="exist"){
+  	if(respuesta==="error"){
   		$(".mensajeCorreo").className="mensajeCorreo mostrar";
+  		$("#username_input").focus();
   	}
   	if(respuesta==="href"){
   		alert(document.cookie);
-  		location.href="inicio.html";
+  		location.href="pokedex.html";
   	}
       }  
     };
@@ -33,4 +30,3 @@ function registro(form){
         xmlHttp.open("POST","http://localhost:8080/pokedex",true);
         xmlHttp.send(new FormData(form));
 }
-

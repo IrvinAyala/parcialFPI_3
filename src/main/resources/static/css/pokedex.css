@@ -9,7 +9,26 @@
 .container-fluid a, .container-fluid input, .container-fluid button{
     font-family: "Comfortaa", "Helvetica", sans-serif;
 }
-
+.estrella{
+	clip-path: polygon(30% 56%, 7% 39%, 40% 38%, 53% 7%, 64% 38%, 99% 39%, 75% 58%, 85% 89%, 53% 66%, 16% 89%);
+	
+	width: 30%;
+	height: 100px;
+	display: inline-block;
+	
+	float: left;
+	
+}
+.estrella:hover{
+		background-color: yellow;
+		cursor: pointer;
+}
+.favSeleccionado{
+	background-color: yellow;
+}
+.favNoSeleccionado{
+	background-color: #ccc;
+}
 
 html,body{
     height: 100%;
@@ -26,7 +45,8 @@ body{
     
    
 }
-#infoPokemon>div{
+#infoPokemon{
+
 }
 #layoutIzquierdo{
     width: 65%;
@@ -55,6 +75,7 @@ position: relative;
     margin-left: 3%;
     width: 62%;
     float: left;
+    height: auto;
 }
 #habitat{
 	margin:20px 0;
@@ -140,10 +161,18 @@ position: relative;
 }
 #altura,#peso{
         font-size: 30px;
-
+      
+	
 }
+
 #altura{
     padding-bottom: 0;
+
+}
+.divInfo{
+	width: 50%;
+	float:left;
+	margin-right: 20px;
 }
 .tipo2{
 	width:50%;
