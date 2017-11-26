@@ -22,7 +22,7 @@ function logueo(form){
   	}
   	if(respuesta==="href"){
   		
-  		location.href="pokedex.html";
+  		location.href="inicio.html";
   		
   	}
       }  
