@@ -5,7 +5,7 @@ var idPokemon;
 var pokemon;
 var especie;
 var evolucion;
-var pokemonEvolucion
+var pokemonEvolucion;
 
 //Array para los datos
 var aAbities = [];
@@ -171,7 +171,7 @@ function mostrar() {
 
                 var contenido = `<div id="evolucion">
                                     <div id="imagen-evolucion">
-                                        <img src="${ruta}" alt="hola" id="imagen">
+                                        <img src="${ruta}" alt="imagen" id="imagen">
                                     </div>
                                     <div id="contenidoEvolucion">${pokemonEvolucion.name}</div>
                                 </div>`;
@@ -255,8 +255,11 @@ function generarElemento(identificador, texto, elemento, formato) {
 window.onload = function () {
     idPokemon = parseFloat(location.href.split("=")[1]);
     if (idPokemon > 0) {
-
         cargarDatos();
+
+//        if (location.href == "file:///home/irvin/Documents/workspace-sts-3.9.0.RELEASE/parcialFPI_3/src/main/resources/static/html/perfil.html") {
+//            actualizarFavoritos();
+//        }
     }
 
     var xmlhttp = new XMLHttpRequest();
@@ -271,6 +274,11 @@ window.onload = function () {
             }
             console.log(listComplete);
             creadorAutocomplete(listComplete);
+            
+            if (location.href == "file:///home/irvin/Documents/workspace-sts-3.9.0.RELEASE/parcialFPI_3/src/main/resources/static/html/perfil.html") {
+                actualizarFavoritos();
+            }
+            
         }
     };
     xmlhttp.open("GET", "https://pokeapi.co/api/v2/pokemon/?limit=802", true);
