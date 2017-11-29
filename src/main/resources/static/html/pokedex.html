@@ -20,22 +20,22 @@
                         <a class="navbar-brand" href="inicio.html">Pokedex</a>
                     </div>
                     <ul class="nav navbar-nav">
-                        <li><a href="login.html">Iniciar Sesión</a></li>
-                        <li><a href="registro.html">Resgístrarme</a></li>
+                        <li><a href="login.html">Sign in</a></li>
+                        <li><a href="registro.html">Sign up</a></li>
                     </ul>
                     <form class="navbar-form navbar-left">
                         <div class="form-group">
                             <input type="text" class="form-control"
-                                   placeholder="Busca un pokemon" list="lista"
+                                   placeholder="Search a pokemon" list="lista"
                                    onkeypress="return LlenarConEnter(event)">
                             <datalist id="lista"></datalist>
                         </div>
-                        <button type="button" class="btn btn-default">Buscar</button>
+                        <button type="button" class="btn btn-default">Search</button>
                     </form>
                     <div id="logeo">
                         <ul class="nav navbar-nav">
-                            <li><a href="perfil.html" class="mostrar">Perfil</a></li>
-                            <li><a href="inicio.html" class="ocultar">Cerrar sesión</a></li>
+                            <li><a href="perfil.html" class="mostrar">Profile</a></li>
+                            <li><a href="inicio.html" class="ocultar">Sign out</a></li>
                         </ul>
                     </div>
                 </div>
@@ -50,12 +50,11 @@
 
                     <div id="pokemonImage">
                         <div>
-                            <img alt="Foto del pokemon"
-                                 src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/600.png">
+                            <img alt="Foto del pokemon" src="../images/pokemon-default.png">
                         </div>
                     </div>
                     <br>
-                    <div id="habitat" class="textoGris"></div>
+                    <div id="habitat" class="textoGris">Forest</div>
                 </div>
                 <div id="layoutDerechoInterno">
                     <div id="div-titulo" class="textoGris">
@@ -64,20 +63,22 @@
                             <img src="../images/pokeball2.png" alt="hola">
                         </div>
 
-                        <div id="titulo"></div>
+                        <div id="titulo">## - pokemon</div>
                     </div>
                     <br> <br>
 
                     <div id="infoPokemon">
                    
-                        <div id="divTipos"></div>
+                        <div id="divTipos">
+                            <span class="tipo1">electric</span>
+                        </div>
                         <br> <br>
                          <div class="divInfo">
                         <div id="altura">
-                            <label>Height</label> <span></span>
+                            <label>Height</label> <span>1.6 m</span>
                         </div>
                         <div id="peso">
-                            <label>Weight</label> <span></span>
+                            <label>Weight</label> <span>5 Kg</span>
                         </div>
          
                    
@@ -88,24 +89,39 @@
 	      <div class="estrella favNoSeleccionado" title="Añadir a favoritos"></div>
                 </div>
                 </div>
-                <div id="descripcion"></div>
+                <div id="descripcion">It’s in its nature to store electricity. It feels
+                        stressed now and then if it’s unable to fully
+                        discharge the electricity.
+                </div>
             </section>
             <section id="layoutDerecho">
                 <div id="opcion1">
                     <p class="topic">Abilities</p>
-                    <div id="moves"></div>
+                    <div id="moves">
+                        <div class="moves">lightning-rod</div>
+                        <div class="moves">static</div>                           
+                    </div>
+                    
                     <p class="topic">Moves</p>
-                    <div id="divOtrosMovs"></div>
+                    <div id="divOtrosMovs">
+                        <div class="moves">mega-punch</div>
+                        <div class="moves">pay-day</div>
+                        <div class="moves">thunder-punch</div>
+                        <div class="moves">slam</div>
+                            
+                    </div>
+                    
                 </div>
                 <div id="opcion2" class="ocultar">
-                    <p class="topic">Evolutions
+                    <p class="topic">Evolution chain
                     <p>
                     <div id="contenedorEvoluciones">
 
                     </div>
                 </div>
                 <div id="dotContainer">
-                    <span class="dot primero" title="Habilities"></span> <span class="dot segundo" title="Evolution-chain"></span>
+                    <span class="dot primero" title="Habilities">Data</span> 
+                    <span class="dot segundo" title="Evolution-chain">Evolution Chain</span>
                 </div>
 
             </section>
@@ -113,7 +129,7 @@
         <div id="contenedorModal" class="ocultar">
             <div id="modal">
 
-                <p>Cargando...</p>
+                <p>Loading...</p>
                 <div id="contenedor-img-modal">
                     <img src="../images/pikachuCargando2.gif" alt="no se encontro">
                 </div>

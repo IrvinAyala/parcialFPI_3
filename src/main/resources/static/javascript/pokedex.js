@@ -5,7 +5,7 @@ var idPokemon;
 var pokemon;
 var especie;
 var evolucion;
-var pokemonEvolucion
+var pokemonEvolucion;
 var urlPokemon;
 
 //Array para los datos
@@ -28,6 +28,14 @@ $(".btn").onclick = function (e) {
 };
 
 function captarId(e) {
+
+    setTimeout(function () {
+        alert("hola");
+        if (pokemon == "undefined" || pokemon == null || especie == "undefined" || especie == null || evolucion == "undefined" || evolucion == null || pokemonEvolucion == "undefined" || pokemonEvolucion == null) {
+            $("#contenedorModal").className = "ocultar";
+            location.href = "inicio.html";
+        }
+    }, 10000);
 
     var pokemonSelecionado = $(".form-control").value;
     var nombresPokemon = document.getElementsByName(pokemonSelecionado);
@@ -59,8 +67,9 @@ function LlenarConEnter(e) {
 }
 
 function cargarDatos() {
+
     $("#contenedorModal").className = "mostrar";
- 
+
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -71,8 +80,8 @@ function cargarDatos() {
             cargarEspecie(url);
         }
     };
-   urlPokemon="https://pokeapi.co/api/v2/pokemon/" + idPokemon + "/";
-    xhttp.open("GET",urlPokemon , true);
+    urlPokemon = "https://pokeapi.co/api/v2/pokemon/" + idPokemon + "/";
+    xhttp.open("GET", urlPokemon, true);
     xhttp.send();
 }
 
@@ -107,9 +116,12 @@ function cargarEvoluciones(url2) {
 }
 
 
+
 function mostrar() {
 
     limpiar();
+
+
 
     $("#contenedorModal").className = "ocultar";
 
@@ -277,11 +289,11 @@ window.onload = function () {
             }
             console.log(listComplete);
             creadorAutocomplete(listComplete);
-            
+
             if (location.href == "http://localhost:8080/html/perfil.html") {
                 actualizarFavoritos();
             }
-            
+
         }
     };
     xmlhttp.open("GET", "https://pokeapi.co/api/v2/pokemon/?limit=802", true);

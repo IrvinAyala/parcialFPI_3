@@ -179,13 +179,17 @@ position: relative;
     background-color: palegreen;
 }
 .dot{
-	width: 30px;
-	height:30px;
-	border-radius: 50%;
+/*	width: 30px;*/
+	height:33px;
+        padding: 5px;
+	border-radius: 10px;
 	display: inline-block;
-	margin-right:20px;
+	margin-right:10px;
 	background-color: red;
 	border: 1px solid #000;
+        font-weight: bold;
+        margin-bottom: 5px;
+        font-size: 16px;
 }
 #dotContainer{
 	width: 100%;
@@ -325,3 +329,6 @@ position: relative;
     transform: translateY(-50%);
 }
 
+#contenedorFavoritos{
+    padding-bottom: 20px;
+}

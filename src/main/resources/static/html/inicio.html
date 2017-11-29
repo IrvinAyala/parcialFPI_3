@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Inicio</title>
+        <title>Home</title>
         <link href="../css/inicio.css" rel="stylesheet" type="text/css">
         <link href="../css/header.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -20,23 +20,23 @@
                         <a class="navbar-brand" href="inicio.html">Pokedex</a>
                     </div>
                     <ul class="nav navbar-nav">
-                        <li><a href="login.html">Iniciar Sesión</a></li>
-                          <li style="display:none"><a href="inicio.html">Cerrar Sesión</a></li>
-                        <li><a href="registro.html">Resgístrarme</a></li>
+                        <li><a href="login.html">Sign in</a></li>
+                          <li style="display:none"><a href="inicio.html">Sign out</a></li>
+                        <li><a href="registro.html">Sign up </a></li>
                     </ul>
                     <form class="navbar-form navbar-left">
                         <div class="form-group">
                             <input type="text" class="form-control"
-                                   placeholder="Busca un pokemon" list="lista"
+                                   placeholder="Search a pokemon" list="lista"
                                    onkeypress="return LlenarConEnter(event)">
                             <datalist id="lista"></datalist>
                         </div>
-                        <button type="button" class="btn btn-default">Buscar</button>
+                        <button type="button" class="btn btn-default">Search</button>
                     </form>
                     <div id="logeo">
                         <ul class="nav navbar-nav">
-                            <li><a href="perfil.html" class="mostrar">perfil</a></li>
-                            
+                            <li><a href="perfil.html" class="mostrar">Profile</a></li>
+                             <li><a href="inicio.html" class="ocultar">Sign out</a></li>
                         </ul>
                     </div>
                 </div>
@@ -46,8 +46,16 @@
 
         </header>
         <div id="contenedor-inicio">
-            <p id="titulo-inicio">¡Bienvenido a la Pokedex!</p>
-            <p id="contenido-inicio">Pokédex (también llamado Indexador Pokémon), en el mundo Pokémon es una enciclopedia virtual portátil de alta tecnología que los entrenadores Pokémon llevan consigo para registrar las fichas de todas las diversas especies Pokémon con las que se encuentran durante su viaje como entrenadores. En general, cuando se cumplen ciertos requisitos, la capacidad de la Pokédex se puede aumentar permitiendo almacenar datos de otros Pokémon, que no son comunes, como los legendarios y Pokémon que no son originarios de esa región. A dicha Pokédex "ampliada" se la conoce como Pokédex Nacional. Según el episodio EP068 de la primera temporada en el anime, fue creada por el profesor Westwood V; sin embargo, en los videojuegos, el creador es el profesor Oak.</p>
+            <p id="titulo-inicio">¡Welcome to the Pokedex!</p>
+            <p id="contenido-inicio">Pokédex (also called Pokemon Indexer), in the world Pokémon is a high-tech 
+                portable virtual encyclopedia that Pokémon trainers carry with them to record the chips of all 
+                the various Pokémon species they encounter during their journey as trainers. In general, when 
+                certain requirements are met, the capacity of the Pokédex can be increased by allowing you to 
+                store data from other Pokémon, which are not common, such as the legendary and Pokémon that are 
+                not native to that region. This "expanded" Pokédex is known as the National Pokédex. According 
+                to the EP068 episode of the first season in the anime, it was created by Professor Westwood V; 
+                however, in video games, the creator is Professor Oak.
+            </p>
         </div>
 
 
