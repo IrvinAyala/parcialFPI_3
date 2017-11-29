@@ -2,7 +2,7 @@ $("#login").onsubmit = function (e) {
     e.preventDefault();
     logueo(this);
 };
-$("#username_input").onkeyup=function(){
+$("#username_input").onkeydown=function(){
 	if($(".mensajeCorreo").className!=="mensajeCorreo ocultar")
 	$(".mensajeCorreo").className="mensajeCorreo ocultar";
 }

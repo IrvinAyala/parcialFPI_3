@@ -3,13 +3,18 @@ var pokemonFavorito;
 //Para los JSON de las evoluciones
 
 function actualizarFavoritos(){
-
+	
+	var cookieValues=document.cookie.split("=")[1].split("|");
+	var email=cookieValues[1];
+	var nombre=cookieValues[2].replace("\"","");
+	$(".userName").innerHTML=nombre;
+	$(".email").innerHTML=email;
     getPokemon();
 }
 
 
 function devolverFavoritos(idFavorito,ruta,nombre) {
- 
+	$("#contenedorModal").className = "ocultar";
             var contenido = `<div id="favorito">
                                     <div id="imagen-favorito">
                                         <img src="${ruta}" alt="imagen" id="imagen">
@@ -22,7 +27,6 @@ function devolverFavoritos(idFavorito,ruta,nombre) {
 
             node.setAttribute("href", "pokedex.html?idPokemon=" + idFavorito);
             $("#contenedorFavoritos").appendChild(node);
-//            console.log("entro 2");
         }
     
 
@@ -39,7 +43,8 @@ function getPokemon(){
   }
   }  
 };
-var idUser=document.cookie.split("=")[1];
+console.log(document.cookie.split("=")[1].split("|")[0].replace("\"",""));
+var idUser=document.cookie.split("=")[1].split("|")[0].replace("\"","");
     xmlHttp.open("GET","http://localhost:8080/pokedex/favoritos/"+idUser,true);
     
     xmlHttp.send();

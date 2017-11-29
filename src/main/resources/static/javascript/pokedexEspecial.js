@@ -30,7 +30,7 @@ function añadirFav() {
 		}
 	};
 	xmlHttp.open("PUT", "http://localhost:8080/pokedex", true);
-	var idUser = document.cookie.split("=")[1];
+	var idUser = document.cookie.split("=")[1].split("|")[0].replace("\"","");
 	xmlHttp.send(idPokemon + "," + idUser + "," + urlPokemon);
 }
 $(".btn").onclick = function (e) {

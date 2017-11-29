@@ -47,21 +47,21 @@
         <div id="contenedor-perfil">
 
             <div id="datos-perfil">
-                <div id="titulo-perfil">Profile</div>
-                <br><br><br><br><br>
+                <div id="imagen-perfil">
+                <img src="../images/usuario.png"></div>
+                
 
-                <div id="nombre" class="dates">
-                    <label>Nombre: </label> <br><span>Soy soy</span>
+                <div class="divInfo">
+                    <p class="info userName">Soy soy</p>
+                    <p class="info email">quieneres@gmail.com</p>
                 </div>
-                <div id="correo" class="dates">
-                    <label>Correo: </label> <br><span>quieneres@gmail.com</span>
-                </div>
+               
                 <!--button type="button" id="btnCargarFavoritos">Cargar</button-->
 
             </div>
 
             <div id="pokemons-perfil">
-                <div id="titulo-pokemons">Favorite pokemons</div>
+                <div id="titulo-pokemons">My favorites</div>
                 <br><br><br><br><br>
                 <div id="contenedorFavoritos">
 
@@ -70,7 +70,17 @@
 
         </div>
 
+<div id="contenedorModal" class="ocultar">
+		<div id="modal">
 
+			<p>Loading...</p>
+			<div id="contenedor-img-modal">
+				<img src="../images/pikachuCargando2.gif" alt="no se encontro">
+			</div>
+
+
+		</div>
+	</div>
 
         <script src="../javascript/perfil.js"></script>
         <script src="../javascript/pokedex.js"></script>

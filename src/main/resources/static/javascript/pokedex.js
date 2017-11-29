@@ -266,7 +266,6 @@ window.onload = function () {
     if(document.cookie.length>0){
     	var sesion=document.querySelectorAll(".sesion");
     	var perfil=document.querySelectorAll(".perfil");
-    	console.log(sesion+"-----"+perfil);
     	sesion[0].className="sesion ocultar";
     	sesion[1].className="sesion ocultar";
     	perfil[0].className="perfil mostrar";
@@ -283,6 +282,10 @@ window.onload = function () {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
+        	  if (location.href == "http://localhost:8080/html/perfil.html") {
+        		  $("#contenedorModal").className = "mostrar";
+                  actualizarFavoritos();
+              }
             var objJSON = JSON.parse(this.responseText);
             var listComplete = new Array();
             for (i = 0; i < 802; i++) {
@@ -290,9 +293,7 @@ window.onload = function () {
             }
             creadorAutocomplete(listComplete);
             
-            if (location.href == "http://localhost:8080/html/perfil.html") {
-                actualizarFavoritos();
-            }
+          
             
         }
     };
@@ -312,13 +313,20 @@ function creadorAutocomplete(listComplete) {
 }
 if(document.cookie.length>0){
 	setInterval(function(){
-		console.log(document.cookie);
 		if(document.cookie.length===0){
 			location.href="inicio.html";
 		}
-	},100);}
+	},5000);}
 
-
+function delete_cookie() {
+	console.log("entro aqui");
+	
+	 fecha_fin = new Date;
+                fecha_fin.setDate(fecha_fin.getDate()-1);
+//                <nombre>=<valor>; expires=<fecha>; max-age=<segundos>
+	document.cookie = "userID=;expires=" + fecha_fin.toGMTString()+"max-age=0";
+	console.log("llego aqui");
+	}
 
 
 

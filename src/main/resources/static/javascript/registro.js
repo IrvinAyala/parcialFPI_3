@@ -5,7 +5,7 @@ $("#registro-form").onsubmit=function(e){
 	registro(this);
 	
 };
-$("#username_input").onkeypress=function(){
+$("#username_input").onkeydown=function(){
 	if($(".mensajeCorreo").className!=="mensajeCorreo ocultar")
 	$(".mensajeCorreo").className="mensajeCorreo ocultar";
 }
