@@ -5,7 +5,7 @@ html, body {
 }
 
 body{
-    background-color: #54514F !important ;
+    background-color: #F8FAFA !important ;
     /*background-size: cover;*/
 }
 
@@ -18,17 +18,23 @@ body{
     margin:auto;
     position: relative;
 }
+.ocultar{
+	display: none !important;
+}
+.mostrar{
+	display: block;
+}
 
 #datos-perfil{
     width: 30%;
-    background-image: url(../images/fondo.jpeg);
+    background-color:#DEEAE2;
     height: 100%;
     position: absolute;
 }
 
 #pokemons-perfil{
     width: 70%;
-    background-image: url(../images/fondo4.jpg);
+    background-image: url(../images/imagenFondo.jpg);
     height: 100%;
     margin-left: 30%;
     text-align: center;
@@ -131,3 +137,6 @@ body{
 #enlaceFavorito:hover #contenidoFavorito{
     background-color: #ccc;
 }
+/* background-size:cover; */
+/* 	background-repeat:no-repeat; */
+/* 	background-image: url(../images/imagenFondo.jpg); */

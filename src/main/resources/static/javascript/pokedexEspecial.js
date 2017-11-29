@@ -1,19 +1,22 @@
+if(document.cookie.length===0){
+	$(".estrella").className = "ocultar";
+	}
 //Para los botones rojos y mostrar los divs
 $(".primero").onclick = function() {
-	$("#opcion1").className = "opcion1 mostrar";
-	$("#opcion2").className = "opcion2 ocultar";
+	$("#opcion1").className = "mostrar";
+	$("#opcion2").className = "ocultar";
 	this.style.opacity = "1";
 	$(".segundo").style.opacity = "0.4";
 }
 
 $(".segundo").onclick = function() {
-	$("#opcion1").className = "opcion1 ocultar";
-	$("#opcion2").className = "opcion2 mostrar";
+	$("#opcion1").className = "ocultar";
+	$("#opcion2").className = "mostrar";
 	this.style.opacity = "1";
 	$(".primero").style.opacity = "0.4";
 }
-$(".estrella").onclick = function() {
-	if(document.cookie.lenght>0){
+$("#estrella").onclick = function() {
+	if(document.cookie.length>0){
 	this.className = "estrella favSeleccionado";
 	añadirFav();
 	}
@@ -30,12 +33,7 @@ function añadirFav() {
 	var idUser = document.cookie.split("=")[1];
 	xmlHttp.send(idPokemon + "," + idUser + "," + urlPokemon);
 }
-setInterval(function(){
-	console.log(document.cookie);
-	if(document.cookie.length===0){
-		location.href="inicio.html";
-	}
-},100);
-// setInterval(function(){
-// console.log(document.cookie);
-// },100);
+$(".btn").onclick = function (e) {
+    captarId(e);
+};
+

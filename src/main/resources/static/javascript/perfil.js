@@ -3,9 +3,7 @@ var pokemonFavorito;
 //Para los JSON de las evoluciones
 
 function actualizarFavoritos(){
-////document.getElementById("btnCargarFavoritos").onclick = function (e) {
-////        e.preventDefault();
-//    console.log("entra 0");
+
     getPokemon();
 }
 

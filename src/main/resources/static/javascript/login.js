@@ -1,10 +1,8 @@
-$("#login").onsubmit=function(e){
-	
-	e.preventDefault();
-	logueo(this);
-	
+$("#login").onsubmit = function (e) {
+    e.preventDefault();
+    logueo(this);
 };
-$("#username_input").onkeypress=function(){
+$("#username_input").onkeyup=function(){
 	if($(".mensajeCorreo").className!=="mensajeCorreo ocultar")
 	$(".mensajeCorreo").className="mensajeCorreo ocultar";
 }
