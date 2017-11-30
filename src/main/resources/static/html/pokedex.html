@@ -1,101 +1,111 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>PokeViewer</title>
-        <link href="../css/pokedex.css" rel="stylesheet" type="text/css">
-        <link href="../css/header.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<head>
+<meta charset="UTF-8">
+<title>PokeViewer</title>
+<link href="../css/pokedex.css" rel="stylesheet" type="text/css">
+<link href="../css/header.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=VT323"
+	rel="stylesheet">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    </head>
-    <body>
-        <header>
+</head>
+<body>
+	<header>
 
-            <nav class="navbar navbar-inverse">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="inicio.html">Pokedex</a>
-                    </div>
-                    <ul class="nav navbar-nav">
-                        <li><a href="login.html">Sign in</a></li>
-                        <li><a href="registro.html">Sign up</a></li>
-                    </ul>
-                    <form class="navbar-form navbar-left">
-                        <div class="form-group">
-                            <input type="text" class="form-control"
-                                   placeholder="Search a pokemon" list="lista"
-                                   onkeypress="return LlenarConEnter(event)">
-                            <datalist id="lista"></datalist>
-                        </div>
-                        <button type="button" class="btn btn-default">Search</button>
-                    </form>
-                    <div id="logeo">
-                        <ul class="nav navbar-nav">
-                            <li><a href="perfil.html" class="mostrar">Profile</a></li>
-                            <li><a href="inicio.html" class="ocultar">Sign out</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="inicio.html">Pokedex</a>
+				</div>
+				<ul class="nav navbar-nav">
+					<li><a class="sesion" href="login.html">Log in</a></li>
+					<li><a class="sesion" href="registro.html">Sign up</a></li>
+				</ul>
+				<form class="navbar-form navbar-left">
+					<div class="form-group">
+						<input type="text" class="form-control"
+							placeholder="Search a pokemon" list="lista"
+							onkeypress="return LlenarConEnter(event)">
+						<datalist id="lista"></datalist>
+					</div>
+					<button type="button" class="btn btn-default">Search</button>
+				</form>
+				<div id="logeo">
+					<ul class="nav navbar-nav">
+						<li><a href="perfil.html" class="perfil ocultar">Profile</a></li>
+						<li><a href="inicio.html" class="perfil ocultar">Sign out</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
 
 
 
-        </header>
-        <div id="contenedor">
-            <section id="layoutIzquierdo">
-                <div id="layoutIzquierdoInterno">
+	</header>
+	<div id="contenedor">
+		<section id="layoutIzquierdo">
+			<div id="layoutIzquierdoInterno">
 
-                    <div id="pokemonImage">
-                        <div>
-                            <img alt="Foto del pokemon" src="../images/pokemon-default.png">
-                        </div>
-                    </div>
-                    <br>
-                    <div id="habitat" class="textoGris">Forest</div>
-                </div>
-                <div id="layoutDerechoInterno">
-                    <div id="div-titulo" class="textoGris">
+				<div id="pokemonImage">
+					<div>
+						<img alt="Foto del pokemon"
+							src="../images/pokemon-default.png">
+					</div>
+				</div>
+				<br>
+				<fieldset id="habitat" class="textoGris">
+					<legend>Habitat</legend>
+					<span>Forest</span>
+				</fieldset>
+			</div>
+			<div id="layoutDerechoInterno">
+				<div id="div-titulo" class="textoGris">
 
-                        <div id="pokeballImage">
-                            <img src="../images/pokeball2.png" alt="hola">
-                        </div>
+					<div id="pokeballImage">
+						<img src="../images/pokeball2.png" alt="hola">
+					</div>
 
-                        <div id="titulo">## - pokemon</div>
-                    </div>
-                    <br> <br>
+					<div id="titulo">## - pokemon</div>
+				</div>
+				<br> <br>
 
-                    <div id="infoPokemon">
-                   
-                        <div id="divTipos">
-                            <span class="tipo1">electric</span>
-                        </div>
-                        <br> <br>
-                         <div class="divInfo">
-                        <div id="altura">
-                            <label>Height</label> <span>1.6 m</span>
-                        </div>
-                        <div id="peso">
-                            <label>Weight</label> <span>5 Kg</span>
-                        </div>
-         
-                   
-                    
-              
-                </div>
-                              
-	      <div class="estrella favNoSeleccionado" title="Añadir a favoritos"></div>
-                </div>
-                </div>
-                <div id="descripcion">It’s in its nature to store electricity. It feels
+				<div id="infoPokemon">
+
+					<div id="divTipos">
+					<span class="tipo1">electric</span>
+					</div>
+					<br> <br>
+					<div class="divInfo">
+						<div id="altura">
+							<label>Height: </label> <span>1.6 m</span>
+						</div>
+						<div id="peso">
+							<label>Weight: </label> <span>5 kg</span>
+						</div>
+
+
+
+
+					</div>
+
+					<div id="estrella" class="estrella favNoSeleccionado"
+						title="Añadir a favoritos"></div>
+				</div>
+			</div>
+			<div id="descripcion">
+			It’s in its nature to store electricity. It feels
                         stressed now and then if it’s unable to fully
                         discharge the electricity.
-                </div>
-            </section>
-            <section id="layoutDerecho">
-                <div id="opcion1">
+			</div>
+		</section>
+		<section id="layoutDerecho">
+			<div id="opcion1">
                     <p class="topic">Abilities</p>
                     <div id="moves">
                         <div class="moves">lightning-rod</div>
@@ -112,35 +122,33 @@
                     </div>
                     
                 </div>
-                <div id="opcion2" class="ocultar">
-                    <p class="topic">Evolution chain
-                    <p>
-                    <div id="contenedorEvoluciones">
+			<div id="opcion2" class="ocultar">
+				<p class="topic">Evolution-chain
+				<p>
+				<div id="contenedorEvoluciones"></div>
+			</div>
+			<div id="dotContainer">
+				<span class="dot primero" title="Habilities"></span> <span
+					class="dot segundo" title="Evolution-chain"></span>
+			</div>
 
-                    </div>
-                </div>
-                <div id="dotContainer">
-                    <span class="dot primero" title="Habilities">Data</span> 
-                    <span class="dot segundo" title="Evolution-chain">Evolution Chain</span>
-                </div>
+		</section>
+	</div>
+	<div id="contenedorModal" class="ocultar">
+		<div id="modal">
 
-            </section>
-        </div>
-        <div id="contenedorModal" class="ocultar">
-            <div id="modal">
-
-                <p>Loading...</p>
-                <div id="contenedor-img-modal">
-                    <img src="../images/pikachuCargando2.gif" alt="no se encontro">
-                </div>
+			<p>Loading...</p>
+			<div id="contenedor-img-modal">
+				<img src="../images/pikachuCargando2.gif" alt="no se encontro">
+			</div>
 
 
-            </div>
-        </div>
+		</div>
+	</div>
 
-        <script src="../javascript/pokedex.js"></script>
-        <script src="../javascript/pokedexEspecial.js"></script>
+	<script src="../javascript/pokedex.js"></script>
+	<script src="../javascript/pokedexEspecial.js"></script>
 
-    </body>
+</body>
 
 </html>

@@ -20,6 +20,12 @@ body{
     position: relative;
     padding: 10px;
 }
+.ocultar{
+	display: none !important;
+}
+.mostrar{
+	display: block;
+}
 
 #titulo-inicio{
     font-size: 30px;

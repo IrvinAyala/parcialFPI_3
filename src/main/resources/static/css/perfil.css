@@ -5,10 +5,53 @@ html, body {
 }
 
 body{
-    background-color: #54514F !important ;
+    background-color: #F8FAFA !important ;
     /*background-size: cover;*/
 }
+#imagen-perfil{
+	
+	margin: 30px auto;
+	width: 80%;
+	height: 35%;
+}
+#imagen-perfil img{
+	width: 100%;
+	height: 100%;
+}
+#modal > p{
+    position: absolute;
+    bottom:-20%;
+    color: #fff;
+    left: 50%;
+}
+#contenedorModal{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    position: fixed;
+    top:0; 
+    left: 0;
+    text-align: center;
+    margin: auto;
+}
 
+#contenedor-img-modal{
+    width: 100%;
+    position: absolute;
+    bottom: 10%;
+}
+#modal{
+    width: 350px; 
+    height: 190px; 
+    font-size: 30px; 
+    font-weight: bold;  
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+    top:50%;
+    left: 33%;
+    transform: translateY(-50%);
+}
 #contenedor-perfil{
     /*background-color: #fff;*/
     font-family: "Comfortaa", "Helvetica", sans-serif;
@@ -18,21 +61,28 @@ body{
     margin:auto;
     position: relative;
 }
+.ocultar{
+	display: none !important;
+}
+.mostrar{
+	display: block;
+}
 
 #datos-perfil{
     width: 30%;
-    background-image: url(../images/fondo.jpeg);
+    background-color:#DEEAE2;
     height: 100%;
     position: absolute;
 }
 
 #pokemons-perfil{
     width: 70%;
-    background-image: url(../images/fondo4.jpg);
+    background-image: url(../images/imagenFondo.jpg);
     height: 100%;
     margin-left: 30%;
     text-align: center;
     overflow: scroll;
+    padding: 10px;
 }
 
 #titulo-perfil{
@@ -67,11 +117,19 @@ body{
     height: auto;
 }
 
-.dates{
-    font-size: 25px;
+.divInfo{
+	width:90%;
+	text-align:center;
+    font-size: 20px;
     padding-left: 10px;
-    margin: 20px 0px;
+    margin: 20px auto;
+    font-weight: bold;
 
+}
+.info{
+	background-color: #C6DADA  ;
+	margin-bottom: 10px;
+	color: #fff;
 }
 
 .dates > span{
@@ -96,8 +154,8 @@ body{
 }
 #enlaceFavorito{
     display: inline-block;
-    width: 40%;
-    height: 50%;
+    width: 33%;
+    height: 40%;
     padding: 5px;
     /*border: 5px solid cornflowerblue;*/
     margin-bottom: 10px;
@@ -131,3 +189,6 @@ body{
 #enlaceFavorito:hover #contenidoFavorito{
     background-color: #ccc;
 }
+/* background-size:cover; */
+/* 	background-repeat:no-repeat; */
+/* 	background-image: url(../images/imagenFondo.jpg); */

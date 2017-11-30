@@ -20,9 +20,8 @@
                         <a class="navbar-brand" href="inicio.html">Pokedex</a>
                     </div>
                     <ul class="nav navbar-nav">
-                        <li><a href="login.html">Sign in</a></li>
-                          <li style="display:none"><a href="inicio.html">Sign out</a></li>
-                        <li><a href="registro.html">Sign up </a></li>
+                        <li><a href="login.html" class="sesion">Sign in</a></li>
+                        <li><a href="registro.html" class="sesion">Sign up</a></li>
                     </ul>
                     <form class="navbar-form navbar-left">
                         <div class="form-group">
@@ -35,8 +34,8 @@
                     </form>
                     <div id="logeo">
                         <ul class="nav navbar-nav">
-                            <li><a href="perfil.html" class="mostrar">Profile</a></li>
-                             <li><a href="inicio.html" class="ocultar">Sign out</a></li>
+                            <li><a href="perfil.html" class="perfil ocultar">Profile</a></li>
+                            <li onclick="delete_cookie()" class="perfil ocultar"><a href="#" >Sign out</a></li>
                         </ul>
                     </div>
                 </div>
@@ -47,19 +46,13 @@
         </header>
         <div id="contenedor-inicio">
             <p id="titulo-inicio">¡Welcome to the Pokedex!</p>
-            <p id="contenido-inicio">Pokédex (also called Pokemon Indexer), in the world Pokémon is a high-tech 
-                portable virtual encyclopedia that Pokémon trainers carry with them to record the chips of all 
-                the various Pokémon species they encounter during their journey as trainers. In general, when 
-                certain requirements are met, the capacity of the Pokédex can be increased by allowing you to 
-                store data from other Pokémon, which are not common, such as the legendary and Pokémon that are 
-                not native to that region. This "expanded" Pokédex is known as the National Pokédex. According 
-                to the EP068 episode of the first season in the anime, it was created by Professor Westwood V; 
-                however, in video games, the creator is Professor Oak.
-            </p>
+            <p id="contenido-inicio">Pokédex (also called Pokemon Indexer), in the world Pokémon is a high-tech portable virtual encyclopedia that Pokémon trainers carry with them to record the chips of all the various Pokémon species they encounter during their journey as trainers. In general, when certain requirements are met, the capacity of the Pokédex can be increased by allowing you to store data from other Pokémon, which are not common, such as the legendary and Pokémon that are not native to that region. This "expanded" Pokédex is known as the National Pokédex. According to the EP068 episode of the first season in the anime, it was created by Professor Westwood V; however, in video games, the creator is Professor Oak.</p>
         </div>
 
 
-
+		<script>
+		
+		</script>
         <script src="../javascript/pokedex.js"></script>
     </body>
 </html>

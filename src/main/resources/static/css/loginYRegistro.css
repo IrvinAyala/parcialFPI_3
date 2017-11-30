@@ -21,14 +21,14 @@ html, body {
 .login{
     max-width: 300px;
     min-height: 460px;
-    margin: 30px auto;
+    margin: 90px auto;
     background-color: rgba(10,10,10,.9);
 }
 
 #login-registro{
     max-width: 300px;
     min-height: 400px;
-    margin: 30px auto;
+    margin: 120px auto;
     background-color: rgba(10,10,10,.9);
 }
 
@@ -86,9 +86,10 @@ html, body {
 
 #acciones{
     margin-top: 20px;
+    text-align: center !important;
 }
 #acciones p{
-    margin-top: 70px;
+    margin-top: 20px;
     font-size: 14px;
     text-align: center;
     width: 100%;
@@ -156,13 +157,15 @@ html, body {
 }
 
 .container input {
-    position: absolute;
     width: 195px;
     height: 30px;
     margin: 5px 0;
     background: transparent;
     border: none;
     color: #fff;
+}
+.position{
+	position: absolute;
 }
 
 input:focus,
@@ -179,6 +182,7 @@ input::-moz-placeholder {
 }
 
 .call-to-action {
+	text-align:center;
     margin: 0px 0;
     height: 130px;
     width: 100%;
@@ -187,17 +191,16 @@ input::-moz-placeholder {
 .call-to-action p{
     text-align: center;
     font-size: 14px;
-    margin-top: 80px;
+    margin-top: 20px;
     width: 100%;
     font-weight: bold;
 }
 
 input[type="submit"] {
-    display: block;
-    width: 240px;
+   
+    width: 260px;
     height: 40px;
     padding: 0;
-    margin: 10px 20px 10px;
     font-weight: 700;
     color: #fff;
     background-color: #22c08a;
@@ -214,6 +217,14 @@ input[type="submit"] {
     background-color: #26d69a;
     font-weight: bold;
 }
+.centerLink{
+	margin: auto;
+	text-align: center;
+}
+.btnInicioSesion{
+	display: inline;
+	margin-left: 20px;
+}
 
 .btnEfecto:active {
     background-color: #1eaa7a;
@@ -228,13 +239,13 @@ p {
     /*background-color: yellow;*/
 }
 
-p a {
+a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
 }
 
-label, p a:hover {
+label,a:hover {
     -webkit-cursor: pointer;
     cursor: pointer;
 }

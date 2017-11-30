@@ -12,10 +12,9 @@ import org.springframework.stereotype.Component;
 public class Coneccion {
 	private static Coneccion cnx=null;
 	public static Connection conector;
-	private static String url="/home/zaldivar/pokemon.db";
 
 
-public static synchronized Coneccion getInstance(){
+public static synchronized Coneccion getInstance(){//singleton
     
 if(cnx==null){
    cnx = new Coneccion();
@@ -26,7 +25,7 @@ if(cnx==null){
 
 public Connection conectarDB() {
 	try {
-		conector=DriverManager.getConnection("jdbc:sqlite:"+url);
+		conector=DriverManager.getConnection("jdbc:sqlite:src/main/java/com/example/demo/pokemon.db");
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();

@@ -20,8 +20,8 @@
                         <a class="navbar-brand" href="inicio.html">Pokedex</a>
                     </div>
                     <ul class="nav navbar-nav">
-                        <li><a href="login.html">Sign in</a></li>
-                        <li><a href="registro.html">Sign up</a></li>
+                        <li><a href="login.html" class="sesion">Sign in</a></li>
+                        <li><a href="registro.html" class="sesion">Sign up</a></li>
                     </ul>
                     <form class="navbar-form navbar-left">
                         <div class="form-group">
@@ -34,8 +34,8 @@
                     </form>
                     <div id="logeo">
                         <ul class="nav navbar-nav">
-                            <li><a href="perfil.html" class="mostrar">Profile</a></li>
-                            <li><a href="inicio.html" class="ocultar">Sign out</a></li>
+                            <li><a href="perfil.html" class="perfil">Profile</a></li>
+                            <li><a href="inicio.html" class="perfil">Sign out</a></li>
                         </ul>
                     </div>
                 </div>
@@ -47,21 +47,21 @@
         <div id="contenedor-perfil">
 
             <div id="datos-perfil">
-                <div id="titulo-perfil">Profile</div>
-                <br><br><br><br><br>
+                <div id="imagen-perfil">
+                <img src="../images/usuario.png"></div>
+                
 
-                <div id="nombre" class="dates">
-                    <label>Name: </label> <br><span></span>
+                <div class="divInfo">
+                    <p class="info userName"></p>
+                    <p class="info email"></p>
                 </div>
-                <div id="correo" class="dates">
-                    <label>Email: </label> <br><span></span>
-                </div>
+               
                 <!--button type="button" id="btnCargarFavoritos">Cargar</button-->
 
             </div>
 
             <div id="pokemons-perfil">
-                <div id="titulo-pokemons">Favorite pokemons</div>
+                <div id="titulo-pokemons">My favorites</div>
                 <br><br><br><br><br>
                 <div id="contenedorFavoritos">
 
@@ -70,7 +70,17 @@
 
         </div>
 
+<div id="contenedorModal" class="ocultar">
+		<div id="modal">
 
+			<p>Loading...</p>
+			<div id="contenedor-img-modal">
+				<img src="../images/pikachuCargando2.gif" alt="no se encontro">
+			</div>
+
+
+		</div>
+	</div>
 
         <script src="../javascript/perfil.js"></script>
         <script src="../javascript/pokedex.js"></script>
